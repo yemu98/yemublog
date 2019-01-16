@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue重构模板</title>
+    <script src="../vue.js"></script>
+    <link rel="stylesheet" href="mainstyle.css">
+</head>
+
+<body>
+    <!-- 组件化导航栏的项 -->
+    <div class='header'>
+        <div class='header_nav' id="header_nav">
+            <yemu-header-nav-item v-for="(item, index) in nav_list" :key="item.id" v-bind:nav_item="item"></yemu-header-nav-item>
+        </div>
+    </div>
+    <script>
+        Vue.component('yemu-header-nav-item', {
+            props: ['nav_item'],
+            template: '<div class=header_nav_item><a href="#">{{ nav_item.item }}</a></div>'
+        })
+       var head=new Vue({
+            el: '#header_nav',
+            data() {
+                return {
+                    nav_list: [{
+                            id: 0,
+                            item: '首页'
+                        },
+                        {
+                            id: 1,
+                            item: '博客'
+                        },
+                        {
+                            id: 2,
+                            item: '关于'
+                        },
+                    ]
+                }
+            },
+            methods: {
+                add_item:function(head){
+                    console.log(this.nav_list.length);
+                    this.nav_list.push({id:this.nav_list.length,item:head})
+                }
+            },
+        })
+    </script>
+    <script>
+        head.add_item('hhhh');
+    </script>
+    <div id="example-1">
+            <input v-model="nav_item" type="text">
+            <button v-on:click="add(nav_item)">Add 1</button>
+            <p>{{ nav_item }}</p>
+    </div>
+         <script>
+            var example1 = new Vue({
+            el: '#example-1',
+            data: {
+              nav_item: ''
+            },
+            methods:{
+                add:function(){
+                    head.nav_list.push({id:head.nav_list.length,item:this.nav_item})
+                    nav_item=""
+                    this.nav_item=""
+                }
+            }
+          })
+         </script>
+</body>
+
+</html>
