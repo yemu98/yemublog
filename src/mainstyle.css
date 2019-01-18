@@ -50,7 +50,7 @@ body{
 }
 main{
     box-sizing: border-box;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 60%;
     min-height: 500px;
     /* margin-top: 100px; */
@@ -61,12 +61,15 @@ main{
 footer{
     box-sizing: border-box;
     border: 1px solid black;
+    height: 200px;
+    text-align: center;
 }
 .post{
     box-sizing: border-box;
-    border: 1px solid black;
-    min-height: 200px;
+    /* border: 1px solid black; */
+    min-height: 100px;
     letter-spacing: 2px;
+    border-bottom: 1px solid rgb(226, 226, 226);
 }
 .post_title{
     box-sizing: border-box;
@@ -89,7 +92,7 @@ footer{
 .post_brief{
     opacity: 0.8;
     width: 80%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     word-wrap: break-word;
 }
 .post_all{

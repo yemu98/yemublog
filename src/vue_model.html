@@ -52,7 +52,7 @@
     <script>
         head.add_item('hhhh');
     </script>
-    <div id="example-1">
+    <!-- <div id="example-1">
             <input v-model="nav_item" type="text">
             <button v-on:click="add(nav_item)">Add 1</button>
             <p>{{ nav_item }}</p>
@@ -71,7 +71,44 @@
                 }
             }
           })
+         </script> -->
+         <main>
+             <div id="main_post"> <yemu-post v-for="(item, index) in post_infos" :key="item.id" v-bind:post_info="item"></yemu-post></div>
+            
+         </main>
+         <script>
+             Vue.component('yemu-post',{
+                 props:['post_info'],
+                 template: `
+                 <div class="post">
+                    <div class="post_title"><a :href="post_info.link">{{ post_info.title }}</a></div>
+                    <div class="post_date">{{ post_info.date}}</div>
+            <div class="post_brief">{{ post_info.brief }}</div>
+            <div class="post_all"><a :href="post_info.link">阅读全文...</a></div>
+            </div>
+            `//模板字符串使用反引号 (` `) 来代替普通字符串中的用双引号和单引号。
+             })
+             var main_post=new Vue({
+                 el: '#main_post',
+                 data() {
+                     return {
+                         post_infos:[
+                             {id:0,title:'hhhh',date:'2019-1-18',brief:'jianjie',link:'index.html'}
+                         ]
+                     }
+                 },
+                 methods: {
+                     add_post:function(post_info){
+                         this.post_infos.push(post_info)
+                     }
+                 },
+             })
+             var post={id:1,title:'hhhh',date:'2019-1-18',brief:'jianjie',link:'index.html'} ;
+             main_post.add_post(post);
          </script>
+         <footer>
+             design by yemu
+         </footer>
 </body>
 
 </html>
