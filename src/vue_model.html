@@ -73,13 +73,13 @@
           })
          </script> -->
          <main>
-             <div id="main_post"> <yemu-post v-for="(item, index) in post_infos" :key="item.id" v-bind:post_info="item"></yemu-post></div>
+             <div id="main_post"> <yemu-post-info v-for="(item, index) in post_infos" :key="item.id" v-bind:post_info="item"></yemu-post-info></div>
             
          </main>
          <script>
-             Vue.component('yemu-post',{
+             Vue.component('yemu-post-info',{
                  props:['post_info'],
-                 template: `
+                 template: ` 
                  <div class="post">
                     <div class="post_title"><a :href="post_info.link">{{ post_info.title }}</a></div>
                     <div class="post_date">{{ post_info.date}}</div>

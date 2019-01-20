@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>post_model</title>
+    <link rel="stylesheet" href="mainstyle.css">
+    <script src="../vue.js"></script>
+    <script src="component.js"></script>
+    <style>
+        main {
+            /* border: 1px solid black; */
+        }
+
+        .post_headline {
+            font-weight: bolder;
+            font-size: 200%;
+        }
+
+        .post_main_text {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-right: 30%;
+        }
+
+        .post_main_text p {
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='header'>
+        <div class='header_nav' id="header_nav">
+            <yemu-header-nav-item v-for="(item, index) in nav_list" :key="item.id" v-bind:nav_item="item"></yemu-header-nav-item>
+        </div>
+    </div>
+    <script>
+        Vue.component('yemu-header-nav-item', {
+            props: ['nav_item'],
+            template: '<div class=header_nav_item><a href="#">{{ nav_item.item }}</a></div>',
+        })
+        var head = new Vue({
+            el: '#header_nav',
+            data() {
+                return {
+                    nav_list: [{
+                            id: 0,
+                            item: '首页'
+                        },
+                        {
+                            id: 1,
+                            item: '博客'
+                        },
+                        {
+                            id: 2,
+                            item: '关于'
+                        },
+                    ]
+                }
+            },
+            methods: {
+                add_item: function (head) {
+                    console.log(this.nav_list.length);
+                    this.nav_list.push({
+                        id: this.nav_list.length,
+                        item: head
+                    })
+                }
+            },
+        })
+    </script>
+    <main>
+        <div id="post_demo">
+            <yemu_post :post_date="post_date" :headline="headline" :main_text="main_text"></yemu_post>
+            <!-- <yemu-post-para v-for="(para, index) in text" :para="para"></yemu-post-para> -->
+        </div>
+    </main>
+    <footer>
+        hhh
+    </footer>
+    <script>
+        Vue.component('yemu_post',{
+            props:['post_date','headline','main_text'],
+            template: `<div><div class="post_date">{{ post_date }}</div>
+                <div class="post_headline">{{ headline }}</div>
+                <yemu-post-para v-for="(para, index) in text" :key="index" :para="para"></yemu-post-para></div>`,
+                computed: {
+                text: function () {//对文本处理，遇到换行符\n，生成一段
+                    var strs=new Array(), //定义一数组
+                    strs=this.main_text.split("\n") //字符分割 
+                    return strs;
+                }
+            },
+        } )
+        Vue.component('yemu-post-para',{
+            props:['para'],
+            template :'<div class="post_main_text"><p>{{ para }}</p></div>'
+        })
+        new Vue({
+            el: '#post_demo',
+            data() {
+                return{
+                    headline: 'daidnad',
+                    post_date: '2019-1-1',
+                    main_text: `adada
+                    daaaaaaddddddddddddddadiuqb否报价吧毕竟覅吧埃里克报复你拉开比分了uqb否报价吧毕竟覅吧埃里克报复你拉开比分了uqb否报价吧毕竟覅吧埃里克报复你拉开比分了
+                    d
+                    faf`,
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
