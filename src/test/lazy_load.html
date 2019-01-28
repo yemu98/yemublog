@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lazy_load</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+    main{
+        border: 1px solid black;
+    }
+    .t{
+        height: 200px;
+        border: 1px solid black;
+    }
+    button{
+        position: fixed;
+        top: 0;
+    }
+    </style>
+</head>
+<body>
+    <main id="main">
+            <p class="t" id="test">loading...</p>
+            <p class="t" id="test">loading...</p>
+            <p class="t" id="test">loading...</p>
+    </main>
+    <button onclick="get()">get_height</button>
+</body>
+</html>
+<script>
+    function get(){
+        console.log('滚动条到顶部的垂直高度:'+$(document).scrollTop()); 
+        console.log('显示区域高度:'+$(window).height());
+        console.log('页面的文档高度:'+$(document).height());
+        new_p();
+    }
+    window.onscroll=function(){
+        if ($(document).height()-$(document).scrollTop()-$(window).height()<=100){
+        // alert('到达底部');
+        new_p();
+    }
+    }
+
+    function new_p(){
+        var p=document.createElement('p');
+        p.innerHTML="loading...";
+        document.getElementById('main').append(p);
+    }
+</script>

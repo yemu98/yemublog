@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>大</title>
+    <link rel="stylesheet" href="http://localhost/yemublog/src/css/mainstyle.css">
+    <script src="../../vue.js"></script>
+    <script src="../component.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="../js/load_nav.js"></script>
+    <script src="../js/load_post_page.js"></script>
+</head>
+
+<body>
+    <div class='header'>
+        <div class='header_nav' id="header_nav">
+            <yemu-header-nav-item v-for="(item, index) in nav_list" :key="item.id" v-bind:nav_item="item"></yemu-header-nav-item>
+        </div>
+    </div>
+    <main>
+        <div id="post_wrap">
+            <yemu_post :post_date="post_date" :headline="headline" :main_text="main_text"></yemu_post>
+        </div>
+    </main>
+    <footer>hello world</footer>
+    <script>
+        var post = new Vue({
+            el: "#post_wrap",
+            data() {
+                return {
+                    post_date: "2019-01-27 16:48:30",
+                    headline: "大",
+                    main_text: `阿达`
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>

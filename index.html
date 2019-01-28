@@ -1,75 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>yemu--blog</title>
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <style>
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>yemu--blog</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script>
+    window.location.href = "src/html/index.html";
+  </script>
 </head>
-<body>
-    <div id="app">
-        <p>{{ message }}</p>
-        <span v-if="seen">you can see</span>
-        <ol><li v-for="todo in todos">{{ todo.text }}</li></ol>
-        <button v-on:click="reverseMessage">reverse message</button>
-        <input v-model="message">
-      </div>
-      <script>
-      var app=new Vue({
-        el: '#app',
-        data: {
-          message: 'this is message',
-          seen: true,
-          todos:[
-            {text: 'one'},
-            {text: 'two'},
-            {text: 'three'}
-          ]
-        },
-        methods: {
-          reverseMessage: function () {
-            this.message=this.message.split('').reverse().join('');
-          }
-        }
-      })
-      app.todos.push({ text:'new item'})
-      
-      </script>
-      <div id="commponents">
-        <ol>
-          <todo-item
-          v-for="item in list"
-          v-bind:todo2="item"
-          v-bind:key="item.id"
-          ></todo-item>
-        </ol>
-      </div>
-      <script>
-        Vue.component('todo-item',{
-          props:['todo2'],//向子组件传数据
-          template: '<li>{{ todo2.text }}</li>'
-        })//定义一个组件
 
-        var components=new Vue({
-          //父组件
-          el: '#commponents',
-          data(){
-            return {
-              list:[
-                {id: 0,text: 'one'},
-                {id: 1,text: 'two'},
-                {id: 2,text: 'three'}
-            ]
-            }
+<body>
+  <!-- <div id="app">
+    <p>{{ message }}</p>
+    <span v-if="seen">you can see</span>
+    <ol>
+      <li v-for="todo in todos">{{ todo.text }}</li>
+    </ol>
+    <button v-on:click="reverseMessage">reverse message</button>
+    <input v-model="message">
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'this is message',
+        seen: true,
+        todos: [{
+            text: 'one'
+          },
+          {
+            text: 'two'
+          },
+          {
+            text: 'three'
           }
-        })
-      </script>
-      <script>
-      window.location.href="src/index.html";
-      </script>
+        ]
+      },
+      methods: {
+        reverseMessage: function () {
+          this.message = this.message.split('').reverse().join('');
+        }
+      }
+    })
+    app.todos.push({
+      text: 'new item'
+    })
+  </script>
+  <div id="commponents">
+    <ol>
+      <todo-item v-for="item in list" v-bind:todo2="item" v-bind:key="item.id"></todo-item>
+    </ol>
+  </div>
+  <script>
+    Vue.component('todo-item', {
+      props: ['todo2'], //向子组件传数据
+      template: '<li>{{ todo2.text }}</li>'
+    }) //定义一个组件
+
+    var components = new Vue({
+      //父组件
+      el: '#commponents',
+      data() {
+        return {
+          list: [{
+              id: 0,
+              text: 'one'
+            },
+            {
+              id: 1,
+              text: 'two'
+            },
+            {
+              id: 2,
+              text: 'three'
+            }
+          ]
+        }
+      }
+    })
+  </script> -->
+
 </body>
+
 </html>
