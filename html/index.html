@@ -12,7 +12,7 @@
             width: 50%;
             height: inherit;
             margin-left: 10%;
-            border: 1px solid black;
+            /* border: 1px solid black; */
         }
 
 
@@ -20,70 +20,136 @@
         .rightnav {
             height: inherit;
             float: right;
-            border: 1px solid black;
+            border-left: 1px solid gainsboro;
             width: 20%;
             margin-left: 0;
             margin-right: 10%;
 
         }
 
-        .blog{
-            border: 1px solid black;
+        .blog {
+            /* border: 1px solid black; */
             display: inline-block;
             width: 100%;
             height: 300px;
         }
-        .bloginfo{
+
+        .bloginfo {
             margin-top: 0;
             width: 100%;
-            border: 1px solid black;
-            
-        }
-        .writer{
-            /* display: inline-block; */
-            border: 1px solid black;
+            /* border: 1px solid black; */
+            font-weight:lighter;
+            font-family: Roboto;
+            font-size: 100%;
+            line-height: 20px;
             float: left;
+
         }
-        .posttime{
+
+        .writer {
             /* display: inline-block; */
-            border: 1px solid black;
+            /* border: 1px solid black; */
             float: left;
-            
+            line-height: 20px;
         }
+
+        .posttime {
+            /* display: inline-block; */
+            /* border: 1px solid black; */
+            margin-left: 2%;
+            float: left;
+
+        }
+
         .blogcategory {
+            margin-left: 2%;
             width: auto;
-            border: 1px solid black;
+            /* border: 1px solid black; */
             line-height: 20px;
             /* float: right; */
         }
-        @media screen and (min-width:350px) and (max-width:480px){
-            
-            .rightnav{
+
+        @media screen and (max-width:1200px) {
+            .rightnav {
                 display: none;
             }
+
+            .bloglist {
+                margin-left: 0;
+                width: 95%;
+            }
         }
-        .blogheadline{
+
+        .blogheadline {
             margin-top: 50px;
             font-size: 200%;
             margin-left: 5%;
+            color: black;
         }
-        .blogpart{
+
+        .blogheadline a {
+            color: black;
+        }
+
+        .blogheadline a:hover {
+            color: rgb(220, 40, 40);
+        }
+
+        .blogpart {
             margin-top: 20px;
             margin-left: 5%;
         }
-        .blogoperation{
-            margin-top: 30px;
+
+        .blogoperation {
+            margin-top: 40px;
             margin-left: 5%;
         }
-        .btn{
-            border-radius: 10px;
+
+        .btn {
+            border-radius: 8px;
+
         }
-        .readmore{
+
+        .readmore {
             height: 50px;
-            width: 100px;
-            background-color: rgb(168, 164, 164);
+            width: 130px;
+            background-color: rgb(240, 240, 240);
             text-align: center;
-            
+            line-height: 50px;
+            overflow: hidden;
+            display: inline-block;
+            color: rgb(80, 77, 77);
+        }
+
+        .discuss {
+            color: rgb(80, 77, 77);
+            float: right;
+            margin-right: 5%;
+            line-height: 50px;
+        }
+
+        .category-archive{
+            overflow: hidden;
+            text-align: left;
+            margin-left: 0;
+        }
+        
+        .category-archive span{
+            font-weight:bold;
+            margin-left:12%;
+        }
+        .category-archive .category {
+            padding-top: 30px;
+            width: 100%;
+            display: inline-block;
+            word-break: break-all;
+            line-height: 20px;
+            border-bottom: 1px solid gainsboro;
+            margin-left: 0;
+        }
+        .category-archive .category a{
+            color: rgb(220, 40, 40);
+            line-height: 10px;
         }
     </style>
 </head>
@@ -119,19 +185,66 @@
                     <div class="writer">作者dadadadddddddd</div>
                     <div class="posttime">2019-5-27</div>
                     <div class="category blogcategory">
-                            <a href="#">分类adafafaf</a>
-                            <a href="#">/子分类adafafaf</a>
+                        <a href="#">分类adafafaf</a>
+                        <a href="#">/子分类adafafaf</a>
                     </div>
                 </div>
-                <div class="blogheadline"><a href="#">标题</a></div>
+                <div class="blogheadline"><a href="#">标题dddddddddddddd</a></div>
                 <div class="blogpart">片段</div>
                 <div class="blogoperation">
-                    <button class="btn readmore">阅读更多 ></button>
+                    <a class="btn readmore" href="#">阅读更多 ></a>
+                    <a class="discuss" href="#">发布评论</a>
+                </div>
+            </div>
+            <div class="blog">
+                <div class="bloginfo">
+                    <div class="writer">作者dadadadddddddd</div>
+                    <div class="posttime">2019-5-27</div>
+                    <div class="category blogcategory">
+                        <a href="#">分类adafafaf</a>
+                        <a href="#">/子分类adafafaf</a>
+                    </div>
+                </div>
+                <div class="blogheadline"><a href="#">标题dddddddddddddd</a></div>
+                <div class="blogpart">片段</div>
+                <div class="blogoperation">
+                    <a class="btn readmore" href="#">阅读更多 ></a>
+                    <a class="discuss" href="#">发布评论</a>
+                </div>
+            </div>
+            <div class="blog">
+                <div class="bloginfo">
+                    <div class="writer">作者dadadadddddddd</div>
+                    <div class="posttime">2019-5-27</div>
+                    <div class="category blogcategory">
+                        <a href="#">分类adafafaf</a>
+                        <a href="#">/子分类adafafaf</a>
+                    </div>
+                </div>
+                <div class="blogheadline"><a href="#">标题dddddddddddddd</a></div>
+                <div class="blogpart">片段</div>
+                <div class="blogoperation">
+                    <a class="btn readmore" href="#">阅读更多 ></a>
+                    <a class="discuss" href="#">发布评论</a>
                 </div>
             </div>
         </div>
         <div class="rightnav">
-            <div class="category-archive"></div>
+            <div class="category-archive">
+                <span>分类目录</span>
+                <ul>
+                    <li class="category">
+                        <a href="#">分类1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+
+                    </li>
+                    <li class="category">
+                        <a href="#">分类2</a>
+                    </li>
+                    <li class="category">
+                        <a href="#">分类3</a>
+                    </li>
+                </ul>
+            </div>
             <div class="time-archive"></div>
         </div>
 

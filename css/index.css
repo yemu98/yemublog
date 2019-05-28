@@ -94,7 +94,10 @@ nav a:hover{
     from {top:-10px}
     to {top:0px}
 }
-
+@keyframes fromleft{
+    from {left: -10px;}
+    to {left: 5px;}
+}
 a{
     text-decoration: none;
     position: relative;
@@ -105,7 +108,6 @@ a:after {
     width: 0;
     height: 2px;
     background: rgb(220, 60, 60);
-   
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -123,7 +125,7 @@ a.active:after {
 main {
     margin-top: 100px;
     min-height: 600px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
 }
 
