@@ -5,152 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=chrome">
+    <link rel="stylesheet" href="../css/basic.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/index.css">
     <title>首页</title>
     <style>
-        .bloglist {
-            width: 50%;
-            height: inherit;
-            margin-left: 10%;
-            /* border: 1px solid black; */
-        }
 
-
-
-        .rightnav {
-            height: inherit;
-            float: right;
-            border-left: 1px solid gainsboro;
-            width: 20%;
-            margin-left: 0;
-            margin-right: 10%;
-
-        }
-
-        .blog {
-            /* border: 1px solid black; */
-            display: inline-block;
-            width: 100%;
-            height: 300px;
-        }
-
-        .bloginfo {
-            margin-top: 0;
-            width: 100%;
-            /* border: 1px solid black; */
-            font-weight:lighter;
-            font-family: Roboto;
-            font-size: 100%;
-            line-height: 20px;
-            float: left;
-
-        }
-
-        .writer {
-            /* display: inline-block; */
-            /* border: 1px solid black; */
-            float: left;
-            line-height: 20px;
-        }
-
-        .posttime {
-            /* display: inline-block; */
-            /* border: 1px solid black; */
-            margin-left: 2%;
-            float: left;
-
-        }
-
-        .blogcategory {
-            margin-left: 2%;
-            width: auto;
-            /* border: 1px solid black; */
-            line-height: 20px;
-            /* float: right; */
-        }
-
-        @media screen and (max-width:1200px) {
-            .rightnav {
-                display: none;
-            }
-
-            .bloglist {
-                margin-left: 0;
-                width: 95%;
-            }
-        }
-
-        .blogheadline {
-            margin-top: 50px;
-            font-size: 200%;
-            margin-left: 5%;
-            color: black;
-        }
-
-        .blogheadline a {
-            color: black;
-        }
-
-        .blogheadline a:hover {
-            color: rgb(220, 40, 40);
-        }
-
-        .blogpart {
-            margin-top: 20px;
-            margin-left: 5%;
-        }
-
-        .blogoperation {
-            margin-top: 40px;
-            margin-left: 5%;
-        }
-
-        .btn {
-            border-radius: 8px;
-
-        }
-
-        .readmore {
-            height: 50px;
-            width: 130px;
-            background-color: rgb(240, 240, 240);
-            text-align: center;
-            line-height: 50px;
-            overflow: hidden;
-            display: inline-block;
-            color: rgb(80, 77, 77);
-        }
-
-        .discuss {
-            color: rgb(80, 77, 77);
-            float: right;
-            margin-right: 5%;
-            line-height: 50px;
-        }
-
-        .category-archive{
-            overflow: hidden;
-            text-align: left;
-            margin-left: 0;
-        }
-        
-        .category-archive span{
-            font-weight:bold;
-            margin-left:12%;
-        }
-        .category-archive .category {
-            padding-top: 30px;
-            width: 100%;
-            display: inline-block;
-            word-break: break-all;
-            line-height: 20px;
-            border-bottom: 1px solid gainsboro;
-            margin-left: 0;
-        }
-        .category-archive .category a{
-            color: rgb(220, 40, 40);
-            line-height: 10px;
-        }
     </style>
 </head>
 
@@ -174,6 +35,12 @@
                 </li>
             </ul>
         </nav>
+        <div class="headlinsearch">
+            <input type="text" placeholder=" 搜索...">
+            <a href="#">
+                <img class="searchicon" src="../res/搜索.png">
+            </a>
+        </div>
     </header>
     <div class="pageheadline">
         <img class="headerimg" src="../res/test.jpg" alt="页面标题图">
@@ -182,50 +49,53 @@
         <div class="bloglist">
             <div class="blog">
                 <div class="bloginfo">
-                    <div class="writer">作者dadadadddddddd</div>
-                    <div class="posttime">2019-5-27</div>
+                    <div class="writer"><img class="bloginfoicon" src="../res/作者.png">作者dadadadddddddd</div>
+                    <div class="posttime"><img class="bloginfoicon" src="../res/时间.png">2019-5-27</div>
                     <div class="category blogcategory">
-                        <a href="#">分类adafafaf</a>
-                        <a href="#">/子分类adafafaf</a>
+                        <img class="bloginfoicon" src="../res/文件夹.png">
+                        <a href="#">分类adafafaf</a>/
+                        <a href="#">子分类呵呵哈哈哈</a>
                     </div>
                 </div>
                 <div class="blogheadline"><a href="#">标题dddddddddddddd</a></div>
                 <div class="blogpart">片段</div>
                 <div class="blogoperation">
-                    <a class="btn readmore" href="#">阅读更多 ></a>
-                    <a class="discuss" href="#">发布评论</a>
+                    <a class="readmorebtn" href="#"><img class="readmoreicon" src="../res/阅读.png">阅读</a>
+                    <a class="discussbtn" href="#"><img class="discussicon" src="../res/评论.png">发布评论</a>
                 </div>
             </div>
             <div class="blog">
                 <div class="bloginfo">
-                    <div class="writer">作者dadadadddddddd</div>
-                    <div class="posttime">2019-5-27</div>
+                    <div class="writer"><img class="bloginfoicon" src="../res/作者.png">作者dadadadddddddd</div>
+                    <div class="posttime"><img class="bloginfoicon" src="../res/时间.png">2019-5-27</div>
                     <div class="category blogcategory">
-                        <a href="#">分类adafafaf</a>
-                        <a href="#">/子分类adafafaf</a>
+                        <img class="bloginfoicon" src="../res/文件夹.png">
+                        <a href="#">分类adafafaf</a>/
+                        <a href="#">子分类呵呵哈哈哈</a>
                     </div>
                 </div>
                 <div class="blogheadline"><a href="#">标题dddddddddddddd</a></div>
                 <div class="blogpart">片段</div>
                 <div class="blogoperation">
-                    <a class="btn readmore" href="#">阅读更多 ></a>
-                    <a class="discuss" href="#">发布评论</a>
+                    <a class="readmorebtn" href="#"><img class="readmoreicon" src="../res/阅读.png">阅读</a>
+                    <a class="discussbtn" href="#"><img class="discussicon" src="../res/评论.png">发布评论</a>
                 </div>
             </div>
             <div class="blog">
                 <div class="bloginfo">
-                    <div class="writer">作者dadadadddddddd</div>
-                    <div class="posttime">2019-5-27</div>
+                    <div class="writer"><img class="bloginfoicon" src="../res/作者.png">作者dadadadddddddd</div>
+                    <div class="posttime"><img class="bloginfoicon" src="../res/时间.png">2019-5-27</div>
                     <div class="category blogcategory">
-                        <a href="#">分类adafafaf</a>
-                        <a href="#">/子分类adafafaf</a>
+                        <img class="bloginfoicon" src="../res/文件夹.png">
+                        <a href="#">分类adafafaf</a>/
+                        <a href="#">子分类呵呵哈哈哈</a>
                     </div>
                 </div>
                 <div class="blogheadline"><a href="#">标题dddddddddddddd</a></div>
                 <div class="blogpart">片段</div>
                 <div class="blogoperation">
-                    <a class="btn readmore" href="#">阅读更多 ></a>
-                    <a class="discuss" href="#">发布评论</a>
+                    <a class="readmorebtn" href="#"><img class="readmoreicon" src="../res/阅读.png">阅读</a>
+                    <a class="discussbtn" href="#"><img class="discussicon" src="../res/评论.png">发布评论</a>
                 </div>
             </div>
         </div>
@@ -235,7 +105,6 @@
                 <ul>
                     <li class="category">
                         <a href="#">分类1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
-
                     </li>
                     <li class="category">
                         <a href="#">分类2</a>
