@@ -62,7 +62,31 @@
 
         .discuss {
             float: left;
-            bottom: 0;
+            /* bottom: 0; */
+            float: left;
+            width: 100%;
+        }
+        .discuss form{
+            display: block;
+            width: 100%;
+            /* border: 1px solid black; */
+            
+        }
+        .discussinput {
+            display: inline-block;
+            /* float: left; */
+            width: 99%;
+            padding-top: 20px;
+            margin-top: 10px;
+            
+            
+        }
+
+        @media screen and (max-width:1200px) {
+            .blog {
+                margin: 0 auto;
+                width: 95%;
+            }
         }
     </style>
 </head>
@@ -126,9 +150,16 @@
                     设置了一个overflow：hidden隐藏掉了，显示的只是图标的投影。通过改变fliter:drop-shadow()就可以实现改变图标颜色的功能。</p>
             </div>
             <div class="discuss">
+                <span>发表评论</span>
                 <form>
-                    <input type="text" name="" id="">
+                    <textarea class="discussinput" name="discusstext" id="discusstext" cols="40" rows="5"
+                        placeholder="评论*"></textarea>
+                    <input class="discussinput" type="text" name="discussname" id="discussname" placeholder="姓名*">
+                    <input class="discussinput" type="text" name="discussemail" id="discussemail" placeholder="电子邮件*">
+                    <span>带*号为必填项</span>
+                    <a href="#">提交</a>
                 </form>
+
             </div>
         </div>
 

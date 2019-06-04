@@ -7,6 +7,8 @@
     font-size: 100%;
     line-height: 20px;
     float: left;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .bloginfoicon {
@@ -23,29 +25,28 @@
     float: left;
     line-height: 20px;
     text-overflow: ellipsis;
-    max-width: 150px;
+    max-width: 100px;
     overflow: hidden;
     white-space: nowrap;
 }
 
 .posttime {
-    /* display: inline-block; */
     /* border: 1px solid black; */
-    margin-left: 2%;
+    margin-left: 10px;
     float: left;
 
 }
 
 .blogcategory {
-    margin-left: 2%;
-    width: 300px;
+    margin-left: 5px;
+    width: 200px;
     line-height: 20px;
     overflow: hidden;
     white-space: nowrap;
 }
 
 .blogcategory a {
-    max-width: 125px;
+    max-width: 75px;
     overflow: hidden;
     display: inline-block;
     text-overflow: ellipsis;
