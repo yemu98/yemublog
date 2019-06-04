@@ -79,14 +79,16 @@ nav a:hover{
 
 .categorylist{
     border: 1px solid #f0eeee;;
-    width: 100px;
+    width: 150px;
+    overflow: hidden;
     line-height: 50px;
     display: none;
     position: relative;
     /* border: 1px solid black; */
     background-color: white;
-    text-align: center;
-    right: 25px;
+    white-space: nowrap;
+    text-align: left;
+    text-overflow: ellipsis;
     
 }
 
@@ -109,4 +111,14 @@ nav a:hover{
 @keyframes fromleft{
     from {left: -10px;}
     to {left: 5px;}
+}
+@media screen and (max-width:1200px) {
+    .rightnav {
+        display: none;
+    }
+
+    .headlinsearch {
+        display: none;
+    }
+
 }

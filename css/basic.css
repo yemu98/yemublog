@@ -34,7 +34,7 @@ a.active:after {
 
 main {
     margin-top: 100px;
-    min-height: 600px;
+    min-height: 800px;
     /* border: 1px solid black; */
     display: flex;
 }
