@@ -10,84 +10,10 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/rightnav.css">
     <link rel="stylesheet" href="../css/bloginfo.css">
+    <link rel="stylesheet" href="../css/blogmodel.css">
     <title>详情</title>
     <style>
-        .pageheadline {
-            margin-top: 80px;
-            width: 100%;
-            height: 500px;
-            position: relative;
-            overflow: hidden;
-        }
 
-        main {
-            border: 1px solid black;
-            /* margin-left: 10%; */
-            /* margin-top: 0; */
-        }
-
-        .blog {
-            height: 100%;
-            width: 50%;
-            display: block;
-            border: 1px solid red;
-            margin-left: 10%;
-        }
-
-        .blogheadline {
-            font-weight: 500;
-            font-size: 200%;
-            text-align: center;
-        }
-
-        .blogcontent {
-            text-indent: 2em;
-            word-break: break-all;
-            overflow: hidden;
-        }
-
-        .blogcontent img {
-            width: 50%;
-            height: 50%;
-        }
-
-        .blogimg {
-            text-align: center;
-        }
-
-        .blogimginfo {
-            font-weight: lighter;
-            text-decoration: underline;
-        }
-
-        .discuss {
-            float: left;
-            /* bottom: 0; */
-            float: left;
-            width: 100%;
-        }
-        .discuss form{
-            display: block;
-            width: 100%;
-            /* border: 1px solid black; */
-            
-        }
-        .discussinput {
-            display: inline-block;
-            /* float: left; */
-            width: 99%;
-            padding-top: 20px;
-            margin-top: 10px;
-            
-            
-        }
-
-        @media screen and (max-width:1200px) {
-            .blog {
-                margin: 0 auto;
-                width: 95%;
-            }
-        }
     </style>
 </head>
 
@@ -150,14 +76,14 @@
                     设置了一个overflow：hidden隐藏掉了，显示的只是图标的投影。通过改变fliter:drop-shadow()就可以实现改变图标颜色的功能。</p>
             </div>
             <div class="discuss">
-                <span>发表评论</span>
+                <p><h2>发表评论</h2></p>
                 <form>
                     <textarea class="discussinput" name="discusstext" id="discusstext" cols="40" rows="5"
-                        placeholder="评论*"></textarea>
-                    <input class="discussinput" type="text" name="discussname" id="discussname" placeholder="姓名*">
-                    <input class="discussinput" type="text" name="discussemail" id="discussemail" placeholder="电子邮件*">
-                    <span>带*号为必填项</span>
-                    <a href="#">提交</a>
+                        placeholder="评论*" autocomplete="off"></textarea>
+                    <input class="discussinput" type="text" name="discussname" id="discussname" placeholder="姓名*" autocomplete="off">
+                    <input class="discussinput" type="text" name="discussemail" id="discussemail" placeholder="电子邮件*" autocomplete="off">
+                    <p><span>带*号为必填项</span></p>
+                    <p><input type="submit" class="discussbtn" name="submit" id="submit" value="发表评论"></p>
                 </form>
 
             </div>
