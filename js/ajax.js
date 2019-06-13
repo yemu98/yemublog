@@ -32,3 +32,21 @@ function msstodate(inputTime) {
     second = second < 10 ? ('0' + second) : second;
     return y + '-' + m + '-' + d + ' ' + '　' + h + ':' + minute + ':' + second;
 }
+function upload(url,formData,success,failed,progress){//用formData对象，上传文件
+    var xhr=new XMLHttpRequest();
+    xhr.open("POST", url,true);
+    xhr.upload.onprogress=function(evt){
+        progress(evt);
+    }
+    xhr.send(formData);
+    
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {//成功
+            success(xhr.responseText);//调用成功函数
+        }
+        if(xhr.readyState==4&&xhr.status!=200){//失败服务端发生错误
+            failed(xhr.status);//调用失败函数
+        }
+    }
+    
+}

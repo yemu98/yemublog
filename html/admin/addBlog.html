@@ -6,63 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../css/adminbasic.css">
+    <link rel="stylesheet" href="../../css/addblog.css">
+    <script src="../../js/addblog.js"></script>
+    <script src="../../js/ajax.js"></script>
     <title>写博客</title>
 </head>
 <style>
-    textarea {
-        width: 100%;
-        height: auto;
-        resize: none;
-        display: block;
-    }
-
-    .addicon {
-        height: 2em;
-        width: 2em;
-    }
-    .sections{
-        width: 60%;
-        margin: 0 auto;
-        margin-top: 2rem;
-    }
-    .sections textarea{
-        text-indent: 2rem;
-        /* text-align: center; */
-    }
-    .section{
-        margin-top: 1em;
-    }
-    .headline{
-        width: 60%;
-        margin: 0 auto;
-        margin-top: 50px;
-    }
-    .headline textarea{
-        font-size: 200%;
-        font-weight: bolder;
-    }
-    main{
-        /* text-align: center; */
-    }
-    .addbtn{
-        margin: 0 auto;
-        /* margin-left: 500px; */
-        text-align: left;
-        display: block;
-        width: 50px;
-    }
-    .additems{
+    .uploadimg {
         display: none;
-        float: left;
-        width: 200px;
-    }
-    .additem{
-        float: left;
-        /* width: 50px; */
-        /* border: 1px solid black; */
-        
-    }
+        margin-top: 40px;
 
+        width: 100px;
+        height: 50px;
+        border: 1px solid black;
+
+    }
 </style>
 
 <body>
@@ -72,7 +30,8 @@
             <li class="option"><a href="#"><img class="navicon returnindex" src="../../res/首页.png"><span>首页</span></a>
             </li>
             <li class="option"><a href="index.html"><img class="navicon" src="../../res/总览.png"><span>总览</span></a></li>
-            <li class="option active"><a href="addBlog.html"><img class="navicon" src="../../res/添加.png"><span>写博客</span></a></li>
+            <li class="option active"><a href="addBlog.html"><img class="navicon"
+                        src="../../res/添加.png"><span>写博客</span></a></li>
             <li class="option"><a href="#"><img class="navicon" src="../../res/文章.png"><span>文章</span></a></li>
             <li class="option"><a href="#"><img class="navicon" src="../../res/评论.png"><span>评论</span></a></li>
             <li class="option"><a href="#"><img class="navicon" src="../../res/回收站.png"><span>回收站</span></a></li>
@@ -80,62 +39,76 @@
             <li class="option"><a href="#"><img class="navicon" src="../../res/退出.png"><span>登出</span></a></li>
         </ul>
     </nav>
+
     <main id="main">
+        <div class="postnav">
+            <button class="postbtn" onclick="postblog()">发布</button>
+        </div>
+
         <div class="headline">
-            <textarea oninput="autosize(this),replace(this)" placeholder="添加标题"></textarea>
+            <textarea oninput="autosize(this),replace(this)" placeholder="添加标题" id="headline"></textarea>
         </div>
         <div class="sections" id="sections">
-            <textarea class="section" oninput="autosize(this),newsection(this)" placeholder="段落"></textarea>
+            <textarea class="section" oninput="autosize(this),replace(this)" placeholder="段落"></textarea>
         </div>
         <div class="addbtn" onclick="displayitems()">
-                <img class="addicon" src="../../res/add.png" alt="+">
-                <div class="additems" id="additems">
-                        <div class="additem" onclick="addimg()"><img class="addicon" src="../../res/addimg.png" alt="图片"></div>
-                        <div class="additem" onclick="addsection()"><img class="addicon" src="../../res/section.png" alt="段落"></div>
+            <img class="addicon" src="../../res/add.png" alt="+">
+            <div class="additems" id="additems">
+                <div class="additem" onclick="addimgbtn()"><img class="addicon" src="../../res/addimg.png" alt="图片">
                 </div>
+                <div class="additem" onclick="addsection()"><img class="addicon" src="../../res/section.png" alt="段落">
+                </div>
+                <div class="uploadimg" id="uploadimgwrap" onclick="openwrap()">
+                    <input type="file" accept="image/jpeg,image/jpg,image/png" name="uploadphoto" id="uploadimg"
+                        onchange="read_file(this.files)">
+                    <input type="button" onclick="uploadimg()" value="上传">
+                    <progress id="progressbar" value="0" max="100"></progress>
+                </div>
+            </div>
         </div>
+
+
     </main>
 
 
     <script>
-        function autosize(text) {
-            // var text=document.getElementById("text");
-            text.style.height = "auto";
-            text.style.height = text.scrollTop + text.scrollHeight + "px";
+        function uploadimg() {
+            var file = document.getElementById("uploadimg").files[0]; //获取文件对象(可能有多个，这里获取第一个)
+            var formData = new FormData();
+            formData.append("file", file);
+            var url = "http://localhost:8080/yemublog/img/upload";
+            upload(url,
+                formData,
+                upimgsuccess,
+                upimgfailed,
+                progress);
+            document.getElementById("additems").style.display = "block";
         }
-        function replace(text){
-            text.value=text.value.replace(/\n/g,"");//替换换行符
-            // console.log(text.value);
+
+        function openwrap() { //保持上传div显示
+            event.cancelBubble = true;
         }
-        function newsection(text){
-            var str=text.value;
-        
-        }
-        function displayitems(){
-            var additems=document.getElementById("additems");
-            
-            if (additems.style.display=="none"){
-                document.getElementById("additems").style.display="block";
+
+        function progress(evt) {
+            var progressBar = document.getElementById("progressbar");
+            if (evt.lengthComputable) {
+                progressBar.max = evt.total;
+                progressBar.value = evt.loaded;
+
             }
-            else{
-                document.getElementById("additems").style.display="none";
-            }
-            
         }
-        function addsection(){
-            var newnode=document.createElement("textarea");
-            newnode.className="section";
-            
-            newnode.oninput=function(){
-                autosize(this);
-                newsection(this);
-            }
-            
-            // "autosize(this),newsection(this)";
-            newnode.placeholder="段落";
-            var parentnode=document.getElementById("sections");
-            parentnode.insertBefore(newnode,parentnode.lastElementChild.nextSibling);
-            // document.getElementById("sections").innerHTML+="<textarea class='section' oninput='autosize(this),newsection(this)' placeholder='段落'></textarea>";
+
+        function upimgsuccess(text) {
+            alert("成功！");
+            var img = JSON.parse(text);
+            addimg(img.uri);
+            document.getElementById("uploadimg").value = null;
+            var progressBar = document.getElementById("progressbar");
+            progressBar.value = 0;
+        }
+
+        function upimgfailed(text) {
+            alert("失败"+text);
         }
     </script>
 </body>
