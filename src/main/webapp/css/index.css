@@ -1,0 +1,129 @@
+.pageheadline {
+    margin-top: 80px;
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bloglist {
+    width: 50%;
+    height: inherit;
+    margin-left: 10%;
+    /* border: 1px solid black; */
+}
+
+
+
+.blog {
+    /* border: 1px solid black; */
+    display: inline-block;
+    width: 100%;
+    height: 300px;
+}
+
+@media screen and (max-width:1200px) {
+    .rightnav {
+        display: none;
+    }
+
+    .bloglist {
+        margin-left: 0;
+        width: 95%;
+    }
+
+    .headlinsearch {
+        display: none;
+    }
+
+    .blogcategory {
+        width: 100px;
+    }
+}
+
+.blogheadline {
+    margin-top: 50px;
+    font-size: 200%;
+    margin-left: 5%;
+    color: black;
+}
+
+.blogheadline a {
+    color: black;
+}
+
+.blogheadline a:hover {
+    color: rgb(220, 40, 40);
+}
+
+.blogpart {
+    margin-top: 20px;
+    margin-left: 5%;
+}
+
+.blogoperation {
+    margin-top: 40px;
+    margin-left: 5%;
+    margin-right: 5%;
+    /* border: 1px solid black; */
+}
+
+
+.readmorebtn {
+    height: 50px;
+    width: 100px;
+    text-align: center;
+    line-height: 50px;
+    overflow: hidden;
+    display: inline-block;
+    color: rgb(80, 77, 77);
+}
+
+.readmoreicon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-top: 15px;
+    position: relative;
+    left: -20px;
+    filter: drop-shadow(#000000 40px 0);
+}
+
+.readmorebtn:hover .readmoreicon {
+    filter: drop-shadow(rgb(220, 40, 40) 40px 0);
+}
+
+.readmorebtn:hover {
+    color: rgb(220, 40, 40);
+}
+
+.discussbtn {
+    height: 50px;
+    width: 100px;
+    text-align: center;
+    line-height: 50px;
+    overflow: hidden;
+    display: block;
+    color: rgb(80, 77, 77);
+    float: right;
+}
+
+.discussicon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-top: 15px;
+    position: relative;
+    left: -30px;
+    filter: drop-shadow(#000000 35px 0);
+}
+
+.discussbtn:hover .discussicon {
+    filter: drop-shadow(rgb(220, 40, 40) 35px 0);
+}
+
+.discussbtn:hover {
+    color: rgb(220, 40, 40);
+}

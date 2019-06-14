@@ -1,0 +1,124 @@
+header {
+    height: 80px;
+    /* border: 1px solid black; */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    box-shadow: 1px 1px 1px #bdbbbb;
+}
+
+.returnindex {
+    /* border: 1px solid black; */
+    display: block;
+    width: 50px;
+    height: 80px;
+    float: left;
+    margin-left: 5%;
+    line-height: 80px;
+}
+
+.returnindex a {
+    color: rgb(220, 60, 60);
+    text-decoration: none;
+}
+
+.returnindex a:hover {
+    color: gray;
+    text-decoration: underline;
+}
+
+nav {
+    margin-right: 10%;
+    float: right;
+    height: 80px;
+    /* border: 1px solid black; */
+}
+
+nav ul {
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    list-style: none;
+    height: 80px;
+}
+nav a:hover{
+    color: rgb(220, 60, 60);;;
+}
+.headlinsearch {
+    line-height: 80px;
+    float: right;
+}
+
+.headlinsearch input {
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.searchicon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    float: left;
+    right: 5px;
+    margin-top: 30px;
+    position: relative;
+}
+.category{
+    line-height: 80px;
+    /* border: 1px solid black; */
+    float: left;
+    padding-right: 20px;
+    padding-left: 10px;
+    width: 50px;
+}
+
+.category a {
+    color: black;
+}
+
+.categorylist{
+    border: 1px solid #f0eeee;;
+    width: 150px;
+    overflow: hidden;
+    line-height: 50px;
+    display: none;
+    position: relative;
+    /* border: 1px solid black; */
+    background-color: white;
+    white-space: nowrap;
+    text-align: left;
+    text-overflow: ellipsis;
+    
+}
+
+.category:hover .categorylist{
+    display: block;
+    animation: fade-in .5s;
+    animation: fromup .3s;
+
+}
+@keyframes fade-in{
+    0% {opacity: 0;}
+    50% {opacity: 0.5;}
+    100% {opacity: 1;}
+}
+
+@keyframes fromup{
+    from {top:-10px}
+    to {top:0px}
+}
+@keyframes fromleft{
+    from {left: -10px;}
+    to {left: 5px;}
+}
+@media screen and (max-width:1200px) {
+    .rightnav {
+        display: none;
+    }
+
+    .headlinsearch {
+        display: none;
+    }
+
+}
