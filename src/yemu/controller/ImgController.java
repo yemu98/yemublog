@@ -9,12 +9,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import yemu.domain.Img;
+import yemu.java.Path;
 import yemu.service.ImgService;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.OutputStream;
 import java.util.UUID;
 
 @Controller
@@ -49,7 +53,11 @@ public class ImgController {
                 //获得文件后缀名
                 String contentType=file.getContentType();
                 String suffixName=contentType.substring(contentType.indexOf("/")+1);
-                String filepath="/home/yemu/IdeaProjects"+ File.separator+uuid+"."+suffixName;//拼接完整文件保存地址
+
+//                "/home/yemu/IdeaProjects"
+                String imgpath= new Path().getImgPath();//文件保存路径
+
+                String filepath=imgpath+ File.separator+uuid+"."+suffixName;//拼接完整文件保存地址
                 File dir=new File(filepath);
                 if (!dir.exists()){
                     dir.mkdirs();
@@ -66,5 +74,26 @@ public class ImgController {
             }
         }
         return null;
+    }
+
+    @RequestMapping("/showImg")
+    public void showImg(HttpServletRequest request,HttpServletResponse response){//以流的方式返回图片
+        try{
+            Integer id= Integer.valueOf(request.getParameter("id"));
+            Img img = imgService.getById(id);
+            FileInputStream in;
+            response.setContentType("application/octet-stream;charset=UTF-8");
+            in=new FileInputStream(img.getUri());//获取文件真实地址
+            int i=in.available();
+            byte[] data=new byte[i];
+            in.read(data);
+            in.close();
+            OutputStream outputStream=new BufferedOutputStream(response.getOutputStream());
+            outputStream.write(data);
+            outputStream.flush();
+            outputStream.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

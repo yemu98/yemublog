@@ -110,6 +110,13 @@ public class UserController {
             String account=request.getParameter("account");
             String password=request.getParameter("password");
             String remember=request.getParameter("remember");
+            if (remember.equals("false")||remember==null){//不记住登录状态
+                remember="";
+                Cookie uid=new Cookie("uid",null);//删除cookie
+                uid.setMaxAge(0);//生存时间为0
+                uid.setPath("/");//相同路径
+                response.addCookie(uid);
+            }
             User user=userService.getUserByAccount(account);
             if (user!=null) {
                 if (user.getPassword().equals(password)) {
@@ -118,15 +125,15 @@ public class UserController {
                     json.put("account", user.getName());
                     json.put("name", user.getName());
                     json.put("create_time", user.getCreate_time());
-                    if (remember.equals("on")){
-                        Cookie cookie=new Cookie("user",user.toString());
-                        cookie.setPath("/");
-                        response.addCookie(cookie);
-                        HttpSession session=request.getSession();
-                        user.setPassword("");
-                        session.setAttribute("user",user);
+                    if (remember.equals("true")){//记住登录状态
+                        Cookie uid=new Cookie("uid",user.getId().toString());
+                        uid.setPath("/");
+                        uid.setMaxAge(7*24*60*60);//一周过期
+                        response.addCookie(uid);
                     }
-                    System.out.println(request.getParameter("remember"));
+                    HttpSession session=request.getSession();
+                    session.setAttribute("user",user);
+
                 } else {
                     json.put("return", "failed");
                 }

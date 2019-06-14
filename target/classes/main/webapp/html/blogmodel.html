@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/rightnav.css">
     <link rel="stylesheet" href="../css/bloginfo.css">
     <link rel="stylesheet" href="../css/blogmodel.css">
+    <script src="../js/ajax.js"></script>
     <title>详情</title>
     <style>
 
@@ -19,7 +20,7 @@
 
 <body>
     <header>
-        <div class="returnindex"><a href="#">首页</a></div>
+        <div class="returnindex"><a href="../html/index.html">首页</a></div>
         <nav>
             <ul>
                 <li class="category">
@@ -59,7 +60,7 @@
                 </div>
             </div>
             <div class="blogheadline"><span>css改变icon图标颜色</span></div>
-            <div class="blogcontent">
+            <div class="blogcontent" id="blogcontent">
                 <p>ada哈哈哈</p>
                 <p>icon是一种图标文字，是设计师们使用“专用字符编辑程序”而创建的图标字体。</p>
                 <div class="blogimg">
@@ -76,12 +77,16 @@
                     设置了一个overflow：hidden隐藏掉了，显示的只是图标的投影。通过改变fliter:drop-shadow()就可以实现改变图标颜色的功能。</p>
             </div>
             <div class="discuss">
-                <p><h2>发表评论</h2></p>
+                <p>
+                    <h2>发表评论</h2>
+                </p>
                 <form>
                     <textarea class="discussinput" name="discusstext" id="discusstext" cols="40" rows="5"
                         placeholder="评论*" autocomplete="off"></textarea>
-                    <input class="discussinput" type="text" name="discussname" id="discussname" placeholder="姓名*" autocomplete="off">
-                    <input class="discussinput" type="text" name="discussemail" id="discussemail" placeholder="电子邮件*" autocomplete="off">
+                    <input class="discussinput" type="text" name="discussname" id="discussname" placeholder="姓名*"
+                        autocomplete="off">
+                    <input class="discussinput" type="text" name="discussemail" id="discussemail" placeholder="电子邮件*"
+                        autocomplete="off">
                     <p><span>带*号为必填项</span></p>
                     <p><input type="submit" class="discussbtn" name="submit" id="submit" value="发表评论"></p>
                 </form>

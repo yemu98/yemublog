@@ -5,96 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../css/basic.css">
+    <!-- <link rel="stylesheet" href="../../css/basic.css"> -->
+    <link rel="stylesheet" href="../../css/adminbasic.css">
+    <script src="../../js/logout.js"></script>
+    <script src="../../js/cookie.js"></script>
+    <script src="../../js/admin.js"></script>
     <title>管理</title>
 </head>
 <style>
-    body,
-    html {
-        height: 100%;
-        width: 100%;
-        margin: 0 auto;
-        background: #f1f1f1;
-        min-width: 950px;
-    }
 
-    .leftnav {
-        position: fixed;
-        left: 0;
-        top: 0;
-        float: left;
-        height: 100%;
-        width: 150px;
-        background: white;
-        overflow:auto;
-        border-right: 1px solid #f1f1f1;
-    }
 
-    a {
-        float: left;
-        color: black;
-        text-decoration: none;
-       
-    }
-
-    .options {
-        background: white;
-        margin-top: 50px;
-        list-style-type: none;
-        overflow: hidden;
-    }
-    .option{
-        padding-bottom: 100px;
-    }
-    .option:hover a{
-        color: red;
-    }
-    .option:hover .navicon{
-        filter: drop-shadow(red 80px 0);
-    }
-    .option.active a{
-        color: red;
-    }
-    .option.active .navicon{
-        filter: drop-shadow(red 80px 0);
-    }
-    main {
-        margin-left: 150px;
-        min-width: 800px;
-        margin-top: 0;
-        border: 1px solid black;
-    }
-
-    .navicon {
-        height: 28px;
-        width: 28px;
-        left: -80px;
-        position: relative;
-        filter: drop-shadow(#000000 80px 0);
-        top:5px;
-    }
-
-    .returnindex {
-        /* margin-left: 50px; */
-    }
-    
 </style>
 
 <body>
     <nav class="leftnav">
         <ul class="options">
-            <li class="option"><a href="#"><img class="navicon returnindex" src="../../res/首页.png"><span>首页</span></a></li>
-            <li class="active option"><a  href="#"><img class="navicon" src="../../res/总览.png"><span>总览</span></a></li>
-            <li class="option"><a href="#"><img class="navicon" src="../../res/添加.png"><span>写博客</span></a></li>
+            <li class="option"><a href="../index.html"><img class="navicon returnindex" src="../../res/首页.png"><span>首页</span></a>
+            </li>
+            <li class="active option"><a href="index.html"><img class="navicon"
+                        src="../../res/总览.png"><span>总览</span></a></li>
+            <li class="option"><a href="addBlog.html"><img class="navicon" src="../../res/添加.png"><span>写博客</span></a>
+            </li>
             <li class="option"><a href="#"><img class="navicon" src="../../res/文章.png"><span>文章</span></a></li>
             <li class="option"><a href="#"><img class="navicon" src="../../res/评论.png"><span>评论</span></a></li>
             <li class="option"><a href="#"><img class="navicon" src="../../res/回收站.png"><span>回收站</span></a></li>
-            <li class="option"><a href="#"><img class="navicon" src="../../res/用户.png"><span>用户</span></a></li>
-            <li class="option"><a href="#"><img class="navicon" src="../../res/退出.png"><span>登出</span></a></li>
+            <li class="option"><a href="addUser.html"><img class="navicon" src="../../res/用户.png"><span>用户</span></a></li>
+            <li class="option"><a href="" onclick="logout()"><img class="navicon"
+                        src="../../res/退出.png"><span>登出</span></a></li>
         </ul>
     </nav>
     <main>
-        <div>概览</div>
+        <div></div>
         <div>活动</div>
     </main>
 </body>

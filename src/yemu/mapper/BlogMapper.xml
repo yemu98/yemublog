@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="yemu.mapper.BlogMapper">
+    <resultMap id="blog" type="yemu.domain.Blog">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="author" property="author" jdbcType="VARCHAR"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="content" property="content" jdbcType="VARCHAR"/>
+        <result column="excerpt" property="excerpt" jdbcType="VARCHAR"/>
+        <result column="category" property="category" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="VARCHAR"/>
+        <result column="post_time" property="post_time" jdbcType="TIMESTAMP"/>
+        <result column="modified_time" property="modified_time" jdbcType="TIMESTAMP"/>
+        <result column="post_link" property="post_link" jdbcType="VARCHAR"/>
+        <result column="post_link_name" property="post_link_name" jdbcType="VARCHAR"/>
+    </resultMap>
+    
+    <select id="getById" resultMap="blog" parameterType="int">
+        select * from
+        post where id=#{id};
+    </select>
+    <insert id="addBlog" parameterType="yemu.domain.Blog" useGeneratedKeys="true" keyProperty="id">
+        insert into post
+        (author,title,content,excerpt)
+        values
+        (#{author},#{title},#{content},#{excerpt})
+    </insert>
+    <select id="getPage" resultType="yemu.domain.Blog">
+        select * from
+        post  order by id limit #{pagenum},#{blognum};
+    </select>
+    <select id="getBlogCount" resultType="int">
+    select count(*) from post;
+    </select>
+</mapper>

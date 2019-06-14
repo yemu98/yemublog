@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/rightnav.css">
     <link rel="stylesheet" href="../css//bloginfo.css">
+    <script src="../js/ajax.js"></script>
     <title>首页</title>
     <style>
 
@@ -19,7 +20,7 @@
 
 <body>
     <header>
-        <div class="returnindex"><a href="#">首页</a></div>
+        <div class="returnindex"><a href="../html/index.html">首页</a></div>
         <nav>
             <ul>
                 <li class="category">
@@ -35,6 +36,9 @@
                     <div class="categorylist"><a href="#">分类3-1seedfhg</a></div>
                     <div class="categorylist"><a href="#">分类3-1</a></div>
                 </li>
+                <li class="category">
+                    <a href="../html/admin/index.html">管理</a>
+                </li>
             </ul>
         </nav>
         <div class="headlinsearch">
@@ -48,59 +52,9 @@
         <img class="headerimg" src="../res/test.jpg" alt="页面标题图">
     </div>
     <main>
-        <div class="bloglist">
-            <div class="blog">
-                <div class="bloginfo">
-                    <div class="writer"><img class="bloginfoicon" src="../res/作者.png">作者哈哈哈哈哈哈</div>
-                    <div class="posttime"><img class="bloginfoicon" src="../res/时间.png">2019-5-27</div>
-                    <div class="category blogcategory">
-                        <img class="bloginfoicon" src="../res/文件夹.png">
-                        <a href="#">分类adafafaf</a>/
-                        <a href="#">子分类呵呵哈哈哈</a>
-                    </div>
-                </div>
-                <div class="blogheadline"><a href="#">标题dddddddddddddd</a></div>
-                <div class="blogpart">片段</div>
-                <div class="blogoperation">
-                    <a class="readmorebtn" href="#"><img class="readmoreicon" src="../res/阅读.png">阅读</a>
-                    <a class="discussbtn" href="#"><img class="discussicon" src="../res/评论.png">发布评论</a>
-                </div>
-            </div>
-            <div class="blog">
-                <div class="bloginfo">
-                    <div class="writer"><img class="bloginfoicon" src="../res/作者.png">作者dadadadddddddd</div>
-                    <div class="posttime"><img class="bloginfoicon" src="../res/时间.png">2019-5-27</div>
-                    <div class="category blogcategory">
-                        <img class="bloginfoicon" src="../res/文件夹.png">
-                        <a href="#">分类adafafaf</a>/
-                        <a href="#">子分类呵呵哈哈哈</a>
-                    </div>
-                </div>
-                <div class="blogheadline"><a href="#">标题dddddddddddddd</a></div>
-                <div class="blogpart">片段</div>
-                <div class="blogoperation">
-                    <a class="readmorebtn" href="#"><img class="readmoreicon" src="../res/阅读.png">阅读</a>
-                    <a class="discussbtn" href="#"><img class="discussicon" src="../res/评论.png">发布评论</a>
-                </div>
-            </div>
-            <div class="blog">
-                <div class="bloginfo">
-                    <div class="writer"><img class="bloginfoicon" src="../res/作者.png">作者dadadadddddddd</div>
-                    <div class="posttime"><img class="bloginfoicon" src="../res/时间.png">2019-5-27</div>
-                    <div class="category blogcategory">
-                        <img class="bloginfoicon" src="../res/文件夹.png">
-                        <a href="#">分类adafafaf</a>/
-                        <a href="#">子分类呵呵哈哈哈</a>
-                    </div>
-                </div>
-                <div class="blogheadline"><a href="#">标题dddddddddddddd</a></div>
-                <div class="blogpart">片段</div>
-                <div class="blogoperation">
-                    <a class="readmorebtn" href="#"><img class="readmoreicon" src="../res/阅读.png">阅读</a>
-                    <a class="discussbtn" href="#"><img class="discussicon" src="../res/评论.png">发布评论</a>
-                </div>
-            </div>
+        <div class="bloglist" id="bloglist">
         </div>
+
         <div class="rightnav">
             <div class="category-archive">
                 <span>分类目录</span>
@@ -123,6 +77,130 @@
     <footer>
         <span id="footertext"> @2019 Design by yemu</span>
     </footer>
+    <script>
+        function getnowpage() {
+            var page = getUrlVars()["page"];
+            var pagecount = 1;
+            if (page == "" || page == null) {
+                page = 1;
+            }
+            if (page <= 0) {
+                page = 0;
+            }
+            return page;
+        }
+        var page = getUrlVars()["page"];
+        var pagecount = 1;
+        if (page == null || page == "") {
+            window.onload = initPage(1, 10);
+        } else {
+            window.onload = initPage(page, 10);
+        }
+
+        function initPage(page, blognum) { //请求page信息
+            if (page <= 0) {
+                page = 1;
+            }
+            post("http://localhost:8080/yemublog/blog/getPage",
+                "pagenum=" + page + "&blognum=" + blognum,
+                function suc(text) {
+                    var bloglist = JSON.parse(text);
+                    for (var i = 0; i < bloglist.length; i++) {
+                        var blog = bloglist[i];
+                        blog.post_time = msstodate(blog.post_time);
+                        addblog(blog);
+                    }
+                    getPageCount();
+                },
+                function failed(text) {
+                    alert(text);
+                }
+            );
+        }
+
+        function getPageCount() {
+            post("http://localhost:8080/yemublog/blog/getPageCount",
+                "",
+                function suc(text) {
+                    pagecount = text;
+                    addpagination(text);
+                },
+                function failed(text) {
+                    addpagination(1);
+                }
+            );
+        }
+
+        function addpagination(pagecount) {
+            var nowpage=getnowpage();
+            var pagination = document.createElement("ul");
+            pagination.className = "pagination";
+            for (var i = 1; i <= pagecount; i++) {
+                var li = document.createElement("li");
+                var a = document.createElement("a");
+                if (i == nowpage) {
+                    a.className = "active";
+                }
+                a.innerText = i;
+                a.href = "?page=" + i;
+                li.appendChild(a);
+                pagination.appendChild(li);
+            }
+            document.getElementById("bloglist").appendChild(pagination);
+        }
+
+
+        function addblog(blog) { //加载文章
+            var blogwrap = document.createElement("div");
+            blogwrap.className = "blog";
+            var bloginfo = document.createElement("div");
+            bloginfo.className = "bloginfo";
+            blogwrap.appendChild(bloginfo);
+            var writer = document.createElement("div");
+            writer.className = "writer";
+            writer.innerHTML = blog.author;
+            bloginfo.appendChild(writer);
+            var writericon = document.createElement("img");
+            writericon.className = "bloginfoicon";
+            writericon.src = "../res/作者.png";
+            writer.appendChild(writericon);
+            var posttime = document.createElement("div");
+            posttime.className = "posttime";
+            posttime.innerHTML = blog.post_time;
+            bloginfo.appendChild(posttime);
+            var posttimeicon = document.createElement("img");
+            posttimeicon.className = "bloginfoicon";
+            posttimeicon.src = "../res/时间.png";
+            posttime.appendChild(posttimeicon);
+            var blogheadline = document.createElement("div");
+            blogheadline.className = "blogheadline";
+            blogwrap.appendChild(blogheadline);
+            var blogheadlinelink = document.createElement("a");
+            blogheadlinelink.href = "http://localhost:8080/yemublog/html/blog.html?id=" + blog.id;
+            blogheadlinelink.innerText = blog.title;
+            blogheadline.appendChild(blogheadlinelink);
+            var bloglist = document.getElementById("bloglist");
+            var blogpart = document.createElement("div");
+            blogpart.className = "blogpart";
+            blogpart.innerHTML = blog.excerpt;
+            blogwrap.appendChild(blogpart);
+            bloglist.appendChild(blogwrap);
+
+            var blogoperation = document.createElement("div");
+            blogoperation.className = "blogoperation";
+            blogwrap.appendChild(blogoperation);
+            var readmorebtn = document.createElement("a");
+            readmorebtn.className = "readmorebtn"
+            readmorebtn.href = "http://localhost:8080/yemublog/html/blog.html?id=" + blog.id;
+            readmorebtn.innerHTML = "<img class='readmoreicon' src='../res/阅读.png'>阅读";
+            blogoperation.appendChild(readmorebtn);
+            var discussbtn = document.createElement("a");
+            discussbtn.className = "discussbtn";
+            discussbtn.href = "http://localhost:8080/yemublog/html/blog.html?id=" + blog.id;
+            discussbtn.innerHTML = "<img class='discussicon' src='../res/评论.png'>发布评论";
+            blogoperation.appendChild(discussbtn);
+        }
+    </script>
 </body>
 
 </html>
