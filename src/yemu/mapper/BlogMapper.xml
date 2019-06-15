@@ -27,7 +27,7 @@
     </insert>
     <select id="getPage" resultType="yemu.domain.Blog">
         select * from
-        post  order by id limit #{pagenum},#{blognum};
+        post  order by id desc limit #{pagenum},#{blognum};
     </select>
     <select id="getBlogCount" resultType="int">
     select count(*) from post;

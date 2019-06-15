@@ -115,7 +115,7 @@ function postblog() {//发布
     }
     blog["title"]=headline;
     blog["content"]=content;
-    blog["author"]="test";
+    blog["author"]=getCookie("name");
     var url="http://localhost:8080/yemublog/post/postBlog"
     post(url,
         "json="+JSON.stringify(blog),
@@ -137,4 +137,19 @@ function postblog() {//发布
     );
     // alert(JSON.stringify(blog));
     
+}
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }

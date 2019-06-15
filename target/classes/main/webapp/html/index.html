@@ -120,7 +120,7 @@
 
         function getPageCount() {
             post("http://localhost:8080/yemublog/blog/getPageCount",
-                "",
+                "blognum=10",
                 function suc(text) {
                     pagecount = text;
                     addpagination(text);

@@ -18,6 +18,15 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public List<Blog> getPage(int pagenum,int blognum) {
+        if (blognum<=0){
+            blognum=10;
+        }
+        if (pagenum<=0){
+            pagenum=1;
+        }
+        if (pagenum>getPageCount(blognum)){
+            pagenum=getPageCount(blognum);
+        }
         return blogMapper.getPage((pagenum-1)*blognum,blognum);
     }
 

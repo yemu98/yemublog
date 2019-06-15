@@ -3,6 +3,7 @@ package yemu.controller;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import yemu.domain.Blog;
 import yemu.service.BlogService;
@@ -21,9 +22,10 @@ public class BlogController {
     @ResponseBody
     @RequestMapping(value = "/getById",produces = "application/json;charset=UTF-8")
     public Object getById(HttpServletRequest request){
+        Blog blog=null;
         try{
             Integer id= Integer.valueOf(request.getParameter("id"));
-            Blog blog =blogService.getById(id);
+            blog =blogService.getById(id);
             return JSONObject.toJSONString(blog);
         }catch (Exception e){
             e.printStackTrace();
@@ -32,11 +34,17 @@ public class BlogController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/getPage",produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/getPage",produces = "application/json;charset=UTF-8",method = RequestMethod.POST)
     public Object getPage(HttpServletRequest request){
-        Integer pagenum= Integer.valueOf(request.getParameter("pagenum"));
-        Integer blognum=Integer.valueOf(request.getParameter("blognum"));
-        List<Blog> blogs=blogService.getPage(pagenum,blognum);
+        List<Blog> blogs = null;
+        try {
+            Integer pagenum = Integer.valueOf(request.getParameter("pagenum"));
+            Integer blognum = Integer.valueOf(request.getParameter("blognum"));
+            blogs = blogService.getPage(pagenum, blognum);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
         return JSONObject.toJSONString(blogs);
     }
 
