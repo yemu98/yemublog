@@ -1,3 +1,10 @@
+// 功能js
+// ajax（post）
+// 时间戳转日期
+// 上传文件
+// 获取url中所有参数
+// 获取cookie中的某个值
+// 删除cookie中的某个值
 function post(url,data,success,failed) {//ajax-post方式请求，url：请求地址，data发送的数据，success：成功回调，failed:失败回调
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url);
@@ -76,8 +83,15 @@ function getCookie(cname) {//获取cookie值
     }
     return "";
 }
-function deleteCookie(cname){//删除cookie值
+
+
+function deleteCookie(cname,path){//删除指定目录下的cookie值
     var date=new Date();
     date.setTime(date.getTime()-10000);
-    document.cookie=cname+"=;expires="+date.toGMTString();
+    if (path==null||path==""){
+        document.cookie=cname+"=;expires="+date.toGMTString();
+    }
+    else{
+        document.cookie=cname+"=;expires="+date.toGMTString()+";path="+path;
+    }
 }

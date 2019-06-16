@@ -7,28 +7,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9717357-cacc-44fa-b376-d38c3944a632" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/yemu/controller/DiscussController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/yemu/domain/Discuss.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/yemu/mapper/DiscussMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/yemu/mapper/DiscussMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/yemu/service/DiscussService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/yemu/service/DiscussServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/blogmodel.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/admin/addUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/addUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/admin/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/addblog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/addblog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/yemu/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/yemu/controller/BlogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/yemu/mapper/BlogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/yemu/mapper/BlogMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/yemu/service/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/yemu/service/BlogServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/resources/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/ajax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/yemu/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/yemu/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/yemu/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/yemu/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/css/blogmodel.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/webapp/html/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/js/addblog.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/webapp/js/addblog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/resources/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/js/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/webapp/js/ajax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yemu/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yemu/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/css/blogmodel.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/html/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/js/addblog.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/js/addblog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/js/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/js/ajax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/yemu/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/yemu/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/css/blogmodel.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/yemublog/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/yemublog/html/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/yemublog/js/addblog.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/yemublog/js/addblog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/js/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/yemublog/js/ajax.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -47,28 +49,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/yemu/service/DiscussServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#234#235#0" expanded="true" />
-                <element signature="e#256#257#0" expanded="true" />
-                <element signature="e#468#469#0" expanded="true" />
-                <element signature="e#517#518#0" expanded="true" />
-                <element signature="e#586#587#0" expanded="true" />
-                <element signature="e#628#629#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/yemu/controller/DiscussController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="59" column="20" lean-forward="true" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
+            <state relative-caret-position="833">
+              <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,7 +63,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/yemu/controller/PostController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
+            <state relative-caret-position="408">
               <caret line="35" column="111" selection-start-line="35" selection-start-column="84" selection-end-line="35" selection-end-column="111" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -91,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/yemu/controller/BlogController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="-33">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,10 +85,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/yemu/controller/AdminController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/yemu/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="88" column="60" selection-start-line="88" selection-start-column="60" selection-end-line="88" selection-end-column="60" />
+            <state relative-caret-position="324">
+              <caret line="135" selection-start-line="135" selection-end-line="135" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,7 +111,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/yemu/mapper/DiscussMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="102">
               <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -127,23 +123,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/yemu/domain/Discuss.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+            <state relative-caret-position="255">
+              <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#510#511#0" expanded="true" />
-                <element signature="e#535#536#0" expanded="true" />
-                <element signature="e#568#569#0" expanded="true" />
-                <element signature="e#596#597#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/yemu/mapper/BlogMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
+            <state relative-caret-position="290">
               <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
             </state>
           </provider>
@@ -161,7 +153,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/yemu/service/BlogServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="323">
               <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -216,9 +208,7 @@
         <option value="$PROJECT_DIR$/src/yemu/mapper/ImgMapper.xml" />
         <option value="$PROJECT_DIR$/src/yemu/mapper/ImgMapper.java" />
         <option value="$PROJECT_DIR$/src/yemu/service/ImgServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/yemu/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
-        <option value="$PROJECT_DIR$/src/yemu/controller/AdminController.java" />
         <option value="$PROJECT_DIR$/src/yemu/java/Path.java" />
         <option value="$PROJECT_DIR$/src/main/resources/filepath.properties" />
         <option value="$PROJECT_DIR$/src/yemu/controller/ImgController.java" />
@@ -243,6 +233,8 @@
         <option value="$PROJECT_DIR$/src/yemu/domain/Discuss.java" />
         <option value="$PROJECT_DIR$/src/yemu/controller/DiscussController.java" />
         <option value="$PROJECT_DIR$/src/yemu/mapper/BlogMapper.xml" />
+        <option value="$PROJECT_DIR$/src/yemu/controller/AdminController.java" />
+        <option value="$PROJECT_DIR$/src/yemu/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -272,8 +264,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -363,10 +353,17 @@
               <item name="yemu" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="yemublog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yemublog" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -376,7 +373,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -538,7 +535,8 @@
       <workItem from="1560477312488" duration="17907000" />
       <workItem from="1560501517637" duration="14016000" />
       <workItem from="1560566813127" duration="660000" />
-      <workItem from="1560599734673" duration="12434000" />
+      <workItem from="1560599734673" duration="12812000" />
+      <workItem from="1560649736612" duration="5492000" />
     </task>
     <task id="LOCAL-00001" summary="发博客 首页显示基本完成 后台登录完成">
       <created>1560520644881</created>
@@ -561,11 +559,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560567415704</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="可以发表评论 博客页面修复了修改id导致加载不出的问题">
+      <created>1560613546351</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1560613546352</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102669000" />
+    <option name="totallyTimeSpent" value="108539000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -578,9 +583,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1922" height="1024" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4971537" visible="true" weight="0.18210863" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4971537" visible="true" weight="0.18370607" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" sideWeight="0.5028463" side_tool="true" weight="0.1773163" />
@@ -674,14 +678,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="发博客 首页显示基本完成 后台登录完成" />
     <MESSAGE value="更新配置文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新配置文件" />
+    <MESSAGE value="可以发表评论 博客页面修复了修改id导致加载不出的问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="可以发表评论 博客页面修复了修改id导致加载不出的问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/yemu/controller/UserController.java</url>
-          <line>144</line>
+          <line>145</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -948,16 +953,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/yemu/controller/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1021,10 +1016,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/yemu/service/BlogServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/yemu/filter/SimpleCORSFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+        <state relative-caret-position="493">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yemu/service/DiscussServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yemu/controller/DiscussController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yemu/controller/PostController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="35" column="111" selection-start-line="35" selection-start-column="84" selection-end-line="35" selection-end-column="111" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1033,8 +1058,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/yemu/mapper/DiscussMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="102">
           <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yemu/domain/Discuss.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1048,80 +1083,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/yemu/service/DiscussServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/yemu/service/BlogServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#234#235#0" expanded="true" />
-            <element signature="e#256#257#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-            <element signature="e#517#518#0" expanded="true" />
-            <element signature="e#586#587#0" expanded="true" />
-            <element signature="e#628#629#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/yemu/filter/SimpleCORSFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/yemu/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="88" column="60" selection-start-line="88" selection-start-column="60" selection-end-line="88" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/yemu/controller/PostController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="35" column="111" selection-start-line="35" selection-start-column="84" selection-end-line="35" selection-end-column="111" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/yemu/domain/Discuss.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#535#536#0" expanded="true" />
-            <element signature="e#568#569#0" expanded="true" />
-            <element signature="e#596#597#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/yemu/controller/BlogController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/yemu/controller/DiscussController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="59" column="20" lean-forward="true" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
+        <state relative-caret-position="323">
+          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1130,8 +1095,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/yemu/mapper/BlogMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
+        <state relative-caret-position="290">
           <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yemu/controller/BlogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-33">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yemu/controller/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yemu/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="135" selection-start-line="135" selection-end-line="135" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

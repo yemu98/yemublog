@@ -134,6 +134,7 @@ public class UserController {
                     HttpSession session=request.getSession();
                     session.setAttribute("user",user);
 
+
                 } else {
                     json.put("return", "failed");
                 }

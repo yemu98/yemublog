@@ -1,4 +1,5 @@
-
+// 写博客
+// 发布博客
 function autosize(text) {//textarea自适应
     // var text=document.getElementById("text");
     text.style.height = "auto";
