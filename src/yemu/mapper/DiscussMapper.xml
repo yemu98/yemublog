@@ -23,4 +23,18 @@
         values
         (#{blogid},#{content},#{name},#{email})
     </insert>
+    <select id="getDiscussCount" resultType="int">
+        select  count(*) from discuss;
+    </select>
+    <select id="getAll" resultType="yemu.domain.Discuss">
+        select * from discuss;
+    </select>
+    <delete id="deleteByBlog" parameterType="int">
+        delete from discuss
+        where blogid=#{blogid}
+    </delete>
+    <delete id="deleteById" parameterType="int">
+        delete from discuss
+        where id=#{id}
+    </delete>
 </mapper>

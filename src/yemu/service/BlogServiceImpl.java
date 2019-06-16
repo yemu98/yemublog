@@ -1,8 +1,10 @@
 package yemu.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import yemu.domain.Blog;
 import yemu.mapper.BlogMapper;
+import yemu.mapper.DiscussMapper;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -11,6 +13,8 @@ import java.util.List;
 public class BlogServiceImpl implements BlogService {
     @Resource
     private BlogMapper blogMapper;
+    @Resource
+    private DiscussMapper discussMapper;
     @Override
     public Blog getById(int id) {
         return blogMapper.getById(id);
@@ -44,6 +48,13 @@ public class BlogServiceImpl implements BlogService {
         {
             return count/blognum+1;
         }
+    }
+
+    @Transactional
+    @Override
+    public void delete(int id) {
+        blogMapper.delete(id);
+        discussMapper.deleteByBlog(id);
     }
 
 }

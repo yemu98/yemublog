@@ -10,4 +10,5 @@ public interface BlogMapper {
     void addBlog(Blog blog);
     List<Blog> getPage(@Param("pagenum") int pagenum, @Param("blognum") int blognum);
     int getBlogCount();
+    void delete(int id);
 }

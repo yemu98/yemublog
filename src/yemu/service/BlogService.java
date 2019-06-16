@@ -9,4 +9,5 @@ public interface BlogService {
     List<Blog> getPage(int paegnum,int blognum);
     int getBlogCount();
     int getPageCount(int blognum);
+    void delete(int id);
 }

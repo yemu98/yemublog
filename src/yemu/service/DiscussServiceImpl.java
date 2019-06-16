@@ -1,6 +1,7 @@
 package yemu.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import yemu.domain.Discuss;
 import yemu.mapper.DiscussMapper;
 
@@ -25,5 +26,25 @@ public class DiscussServiceImpl implements DiscussService {
     @Override
     public void addDiscuss(Discuss discusss) {
         discussMapper.addDiscuss(discusss);
+    }
+
+    @Override
+    public int getDiscussCount() {
+        return discussMapper.getDiscussCount();
+    }
+
+    @Override
+    public List<Discuss> getAll() {
+        return discussMapper.getAll();
+    }
+    @Transactional
+    @Override
+    public void deleteByBlog(int blog_id) {
+        discussMapper.deleteByBlog(blog_id);
+    }
+    @Transactional
+    @Override
+    public void deleteById(int id) {
+        discussMapper.deleteById(id);
     }
 }

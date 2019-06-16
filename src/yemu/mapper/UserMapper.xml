@@ -37,16 +37,26 @@
         values
         (#{account},#{name},#{password})
     </insert>
-    <update id="updateUser" parameterType="yemu.domain.User">
+    <update id="update" parameterType="yemu.domain.User">
         update user
         <set>
             <if test="account != null">account=#{account},</if>
             <if test="name !=null">name=#{name},</if>
-            <if test="password !=null">password=#{pasword}</if>
+            <if test="password !=null">password=#{password}</if>
         </set>
         where id=#{id};
     </update>
     <delete id="deleteUser" parameterType="yemu.domain.User">
         delete from user where id=#{id};
+    </delete>
+    <select id="getCount" resultType="int">
+        select count(*) from user;
+    </select>
+    <select id="getAll" resultType="yemu.domain.User">
+        select * from user;
+    </select>
+    <delete id="delete" parameterType="int">
+        delete from user
+        where id=#{id};
     </delete>
 </mapper>

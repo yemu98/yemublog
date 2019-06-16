@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import yemu.domain.User;
 import yemu.service.UserService;
@@ -14,6 +15,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @RequestMapping("/user")
@@ -51,7 +53,7 @@ public class UserController {
     }
     @ResponseBody
     @RequestMapping(value = "/getUser",produces = "application/json;charset=UTF-8",params = "id")
-    public Object getUserById(HttpServletRequest request){
+    public Object getUserById(HttpServletRequest request){//根据id获取用户信息
         try{
             String id=request.getParameter("id");
             id=id.trim();//去除多余空格
@@ -69,7 +71,7 @@ public class UserController {
     }
     @ResponseBody
     @RequestMapping(value = "/getUser",produces = "application/json;charset=UTF-8",params = "account")
-    public Object getUserByAccount(HttpServletRequest request){
+    public Object getUserByAccount(HttpServletRequest request){//根据账号获取信息
         try{
             String account=request.getParameter("account");
             account=account.trim();
@@ -86,7 +88,7 @@ public class UserController {
     }
     @ResponseBody
     @RequestMapping(value = "/getUser",produces = "application/json;charset=UTF-8",params = "name")
-    public Object getUserByName(HttpServletRequest request){
+    public Object getUserByName(HttpServletRequest request){//根据姓名获取
         try{
             String name=request.getParameter("name");
             name=name.trim();
@@ -104,7 +106,7 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping(value = "/login",produces = "application/json;charset=UTF-8")
-    public Object login(HttpServletRequest request, HttpServletResponse response){
+    public Object login(HttpServletRequest request, HttpServletResponse response){//登录
         JSONObject json=new JSONObject(true);
         try{
             String account=request.getParameter("account");
@@ -147,5 +149,68 @@ public class UserController {
             json.put("return","error");
         }
         return json.toJSONString();
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/getCount",produces = "application/json;charset=UTF-8")
+    public Object getCount(){//获取总数
+        Integer count=0;
+        try {
+            count=userService.getCount();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            count=0;
+        }
+        return JSONObject.toJSONString(count);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/getAll",produces = "application/json;charset=UTF-8")
+    public Object getAll(){//获取所有用户信息
+        List<User> users = null;
+        try {
+            users=userService.getAll();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return JSONObject.toJSONString(users);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/deleteById",produces = "application/json;charset=UTF-8",params = "id")
+    public Object deleteById(HttpServletRequest request){
+        String flag="error";
+        try {
+            if (request.getParameter("id")!=null&&request.getParameter("id").trim()!="") {
+                Integer id= Integer.valueOf(request.getParameter("id"));
+                userService.delete(id);//删除用户
+                flag="success";
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return JSONObject.toJSONString(flag);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/update",produces = "application/json;charset=UTF-8",params = {"id","account","name"})
+    public Object update(HttpServletRequest request){
+        User user = null;
+        try{
+            Integer id= Integer.valueOf(request.getParameter("id"));
+            String acount=request.getParameter("account");
+            String name=request.getParameter("name");
+            user=userService.getUserById(id);
+            user.setName(name);
+            user.setAccount(acount);
+            userService.update(user);
+            user=userService.getUserById(id);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return JSONObject.toJSONString(user);
     }
 }

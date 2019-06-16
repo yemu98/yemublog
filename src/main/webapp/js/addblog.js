@@ -103,7 +103,12 @@ function upimgfailed(text) {//上传失败回调
 function postblog() {//发布
     var blog={};
     var headline = document.getElementById("headline").value;
-
+    if (headline.trim()==""||headline==null){
+        alert("请填写标题！");
+        document.getElementById("headline").focus();
+        document.getElementById("headline").select();
+        return false;
+    }
     var section = document.getElementsByClassName("section");
     var content = "";
     for (var i = 0; i < section.length; i++) {

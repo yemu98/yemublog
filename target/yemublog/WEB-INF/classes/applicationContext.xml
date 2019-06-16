@@ -13,9 +13,8 @@
        http://www.springframework.org/schema/tx
        http://www.springframework.org/schema/tx/spring-tx.xsd"
 >
-    <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
+    <!-- 自动扫描该包-->
     <context:component-scan base-package="yemu.service" />
-    <context:component-scan base-package="yemu.controller"/>
 
 <!--    引入配置文件-->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -70,6 +69,12 @@ spring会自动查找其下的类-->
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
+<!--    编程式事务，推荐使用TransactionTemplate-->
+    <bean id="transactionTemplate"
+          class="org.springframework.transaction.support.TransactionTemplate">
+        <property name="transactionManager" ref="transactionManager"/>
+    </bean>
+
 <!--    AOP事务管理方法匹配规则-->
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>

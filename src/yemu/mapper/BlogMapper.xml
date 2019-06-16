@@ -32,4 +32,8 @@
     <select id="getBlogCount" resultType="int">
     select count(*) from post;
     </select>
+    <delete id="delete" parameterType="int">
+        delete from post
+        where id=#{id}
+    </delete>
 </mapper>

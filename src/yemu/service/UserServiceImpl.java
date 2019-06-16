@@ -3,10 +3,12 @@ package yemu.service;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import yemu.domain.User;
 import yemu.mapper.UserMapper;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {
@@ -44,8 +46,23 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void updateUser(User user) {
+    public void update(User user) {
+        userMapper.update(user);
+    }
 
+    @Override
+    public int getCount() {
+        return userMapper.getCount();
+    }
+
+    @Override
+    public List<User> getAll() {
+        return userMapper.getAll();
+    }
+    @Transactional
+    @Override
+    public void delete(int id) {
+        userMapper.delete(id);
     }
 
 }
