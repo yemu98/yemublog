@@ -47,7 +47,7 @@ function addimg(id){//添加完图片显示在页面上
 document.getElementById("additems").style.display="none";
     var newnode = document.createElement("img");
     newnode.className = "section";
-    newnode.src = "http://localhost:8080/yemublog/img/showImg?id="+id;
+    newnode.src = "http://blog.yemuc.xyz/img/showImg?id="+id;
     var parentnode = document.getElementById("sections");
     parentnode.insertBefore(newnode, parentnode.lastElementChild.nextSibling);
 }
@@ -66,7 +66,7 @@ function uploadimg() {//上传文件
     var file = document.getElementById("uploadimg").files[0]; //获取文件对象(可能有多个，这里获取第一个)
     var formData = new FormData();
     formData.append("file", file);
-    var url = "http://localhost:8080/yemublog/img/upload";
+    var url = "http://blog.yemuc.xyz/img/upload";
     upload(url,
         formData,
         upimgsuccess,
@@ -122,7 +122,7 @@ function postblog() {//发布
     blog["title"]=headline;
     blog["content"]=content;
     blog["author"]=getCookie("name");
-    var url="http://localhost:8080/yemublog/post/postBlog"
+    var url="http://blog.yemuc.xyz/post/postBlog"
     post(url,
         "json="+JSON.stringify(blog),
         function success(text){

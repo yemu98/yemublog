@@ -60,7 +60,7 @@ a {
 }
 
 .option:hover .navicon {
-    filter: drop-shadow(red 150px 0);
+    filter: drop-shadow(150px 0 red);
 }
 
 .option.active a {
@@ -68,7 +68,7 @@ a {
 }
 
 .option.active .navicon {
-    filter: drop-shadow(red 150px 0);
+    filter: drop-shadow(150px 0 red);
 }
 
 main {
@@ -85,7 +85,7 @@ main {
     width: 28px;
     left: -150px;
     position: relative;
-    filter: drop-shadow(#000000 150px 0);
+    filter: drop-shadow(150px 0 #000000);
     top: 5px;
 }
 
