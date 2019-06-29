@@ -6,28 +6,158 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9717357-cacc-44fa-b376-d38c3944a632" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/yemu/Common/Response.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/yemu/Common/ResponseCode.java" afterDir="false" />
+    <list default="true" id="b9717357-cacc-44fa-b376-d38c3944a632" name="Default Changelist" comment="开始重构，接口返回标准的json数据。">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/yemu/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/yemu/controller/BlogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/yemu/domain/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/yemu/domain/Blog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jdbc.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/resources/applicationContext.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/resources/jdbc.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/resources/spring-mvc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yemublog/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/yemublog/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/jdbc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/resources/jdbc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/resources/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yemu/controller/ImgController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yemu/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yemu/domain/Img.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yemu/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yemu/filter/SimpleCORSFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yemu/mapper/ImgMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yemu/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yemu/service/ImgService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yemu/service/ImgServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yemu/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yemu/service/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/META-INF/yemublog.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/jdbc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/log4j2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/resources/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/resources/jdbc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/resources/log4j2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/resources/spring-mvc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/WEB-INF/jsp/ShowUser.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/css/addblog.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/css/adminbasic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/css/basic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/css/bloginfo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/css/footer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/css/header.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/css/rightnav.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/html/admin/addBlog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/html/admin/addUser.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/html/admin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/html/admin/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/html/blogmodel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/html/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/html/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/js/addblog.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/js/ajax.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/jsp/ShowUser.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/res/add.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/res/addimg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/res/section.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/res/test.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/res/五更琉璃.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/res/作者.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/res/回收站.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/res/总览.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/res/搜索.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/res/文件夹.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/res/文章.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/res/时间.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/res/添加.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/res/用户.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/res/评论.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/res/退出.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/res/阅读.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/main/webapp/res/首页.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/spring-mvc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/yemu/controller/ImgController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/yemu/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/yemu/domain/Img.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/yemu/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/yemu/filter/SimpleCORSFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/yemu/mapper/ImgMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/yemu/mapper/ImgMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/yemu/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/yemu/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/yemu/service/ImgService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/yemu/service/ImgServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/yemu/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/classes/yemu/service/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/jsp/ShowUser.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/aspectjweaver-1.9.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/commons-codec-1.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/commons-dbcp2-2.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/commons-fileupload-1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/commons-io-2.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/commons-logging-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/commons-pool2-2.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/fastjson-1.2.58.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/log4j-api-2.11.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/log4j-core-2.11.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/log4j-web-2.11.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/mybatis-3.5.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/mybatis-spring-2.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/mysql-connector-java-8.0.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/protobuf-java-3.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/spring-aop-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/spring-beans-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/spring-context-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/spring-context-support-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/spring-core-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/spring-expression-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/spring-jcl-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/spring-jdbc-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/spring-oxm-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/spring-test-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/spring-tx-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/spring-web-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/lib/spring-webmvc-5.1.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/css/addblog.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/css/adminbasic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/css/basic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/css/bloginfo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/css/footer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/css/header.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/css/rightnav.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/html/admin/addBlog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/html/admin/addUser.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/html/admin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/html/admin/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/html/blogmodel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/html/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/html/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/js/addblog.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/js/ajax.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/jsp/ShowUser.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/res/add.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/res/addimg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/res/section.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/res/test.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/res/五更琉璃.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/res/作者.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/res/回收站.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/res/总览.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/res/搜索.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/res/文件夹.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/res/文章.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/res/时间.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/res/添加.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/res/用户.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/res/评论.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/res/退出.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/res/阅读.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yemublog/res/首页.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/yemublog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/yemublog.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -58,28 +188,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/yemu/Common/Response.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="90">
               <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#145#146#0" expanded="true" />
-                <element signature="e#174#175#0" expanded="true" />
-                <element signature="e#215#216#0" expanded="true" />
-                <element signature="e#251#252#0" expanded="true" />
-                <element signature="e#281#282#0" expanded="true" />
-                <element signature="e#307#308#0" expanded="true" />
-                <element signature="e#345#346#0" expanded="true" />
-                <element signature="e#375#376#0" expanded="true" />
-                <element signature="e#401#402#0" expanded="true" />
-                <element signature="e#428#429#0" expanded="true" />
-                <element signature="e#463#464#0" expanded="true" />
-                <element signature="e#495#496#0" expanded="true" />
-                <element signature="e#664#665#0" expanded="true" />
-                <element signature="e#690#691#0" expanded="true" />
-                <element signature="e#552#553#0" expanded="true" />
-                <element signature="e#590#591#0" expanded="true" />
-                <element signature="e#1759#1760#0" expanded="true" />
-                <element signature="e#1826#1827#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,7 +200,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/yemu/domain/Blog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
+            <state relative-caret-position="45">
               <caret line="7" column="146" selection-start-line="7" selection-start-column="146" selection-end-line="7" selection-end-column="146" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -97,11 +209,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/yemu/controller/BlogController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="36" column="67" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
+            <state relative-caret-position="225">
+              <caret line="43" column="57" selection-start-line="43" selection-start-column="57" selection-end-line="43" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,10 +221,17 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-450" />
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/yemu/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1574">
+            <state relative-caret-position="2940">
               <caret line="211" selection-start-line="211" selection-end-line="211" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -124,7 +243,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="480">
               <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
             </state>
           </provider>
@@ -166,7 +285,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/ShowUser.jsp" />
         <option value="$PROJECT_DIR$/src/yemu/mapper/MyBatisRepository.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis.xml" />
@@ -217,6 +335,7 @@
         <option value="$PROJECT_DIR$/src/yemu/domain/Blog.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/src/yemu/controller/BlogController.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -253,71 +372,6 @@
               <item name="yemublog" type="b2602c69:ProjectViewProjectNode" />
               <item name="yemublog" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="yemublog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yemublog" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yemublog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yemublog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yemublog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yemublog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yemublog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yemublog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yemublog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yemublog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yemublog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yemublog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="yemu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yemublog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yemublog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="yemu" type="462c0819:PsiDirectoryNode" />
-              <item name="Common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yemublog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yemublog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="yemu" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yemublog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yemublog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="yemu" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yemublog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yemublog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="yemu" type="462c0819:PsiDirectoryNode" />
-              <item name="filter" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -339,7 +393,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -503,7 +557,8 @@
       <workItem from="1560769096148" duration="122000" />
       <workItem from="1561019225541" duration="246000" />
       <workItem from="1561019737923" duration="1517000" />
-      <workItem from="1561789253206" duration="11830000" />
+      <workItem from="1561789253206" duration="12118000" />
+      <workItem from="1561804063277" duration="487000" />
     </task>
     <task id="LOCAL-00001" summary="发博客 首页显示基本完成 后台登录完成">
       <created>1560520644881</created>
@@ -554,11 +609,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561022175703</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="开始重构，接口返回标准的json数据。">
+      <created>1561803822501</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1561803822501</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140710000" />
+    <option name="totallyTimeSpent" value="141520000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -573,7 +635,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4971537" visible="true" weight="0.19034852" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4971537" visible="true" weight="0.1930295" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" sideWeight="0.5028463" side_tool="true" weight="0.1773163" />
@@ -582,8 +644,8 @@
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32847533" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946752" weight="0.38668555" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946752" visible="true" weight="0.407932" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946752" visible="true" weight="0.38668555" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946752" weight="0.407932" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3290993" />
@@ -671,7 +733,8 @@
     <MESSAGE value="评论功能完成 异步加载评论区" />
     <MESSAGE value="添加功能：博客管理，评论管理，用户管理。验收版本" />
     <MESSAGE value="网站demo版 修改url为网站链接" />
-    <option name="LAST_COMMIT_MESSAGE" value="网站demo版 修改url为网站链接" />
+    <MESSAGE value="开始重构，接口返回标准的json数据。" />
+    <option name="LAST_COMMIT_MESSAGE" value="开始重构，接口返回标准的json数据。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -734,16 +797,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/yemu/domain/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ShowUser.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1047,13 +1100,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
@@ -1061,17 +1107,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/yemu/Common/FastjsonConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="43" column="29" lean-forward="true" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1001#1012#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yemu/Common/FastjsonConverter.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.58/fastjson-1.2.58.jar!/com/alibaba/fastjson/support/spring/FastJsonHttpMessageConverter.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1110,16 +1146,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/yemu/domain/Blog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="146" selection-start-line="7" selection-start-column="146" selection-end-line="7" selection-end-column="146" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-675">
@@ -1140,44 +1166,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/yemu/Common/Response.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="90">
           <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#145#146#0" expanded="true" />
-            <element signature="e#174#175#0" expanded="true" />
-            <element signature="e#215#216#0" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
-            <element signature="e#281#282#0" expanded="true" />
-            <element signature="e#307#308#0" expanded="true" />
-            <element signature="e#345#346#0" expanded="true" />
-            <element signature="e#375#376#0" expanded="true" />
-            <element signature="e#401#402#0" expanded="true" />
-            <element signature="e#428#429#0" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#495#496#0" expanded="true" />
-            <element signature="e#664#665#0" expanded="true" />
-            <element signature="e#690#691#0" expanded="true" />
-            <element signature="e#552#553#0" expanded="true" />
-            <element signature="e#590#591#0" expanded="true" />
-            <element signature="e#1759#1760#0" expanded="true" />
-            <element signature="e#1826#1827#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
+    <entry file="file://$PROJECT_DIR$/src/yemu/domain/Blog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
+        <state relative-caret-position="45">
+          <caret line="7" column="146" selection-start-line="7" selection-start-column="146" selection-end-line="7" selection-end-column="146" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/yemu/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1574">
+        <state relative-caret-position="2940">
           <caret line="211" selection-start-line="211" selection-end-line="211" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1185,14 +1203,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/yemu/controller/BlogController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="36" column="67" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
+        <state relative-caret-position="225">
+          <caret line="43" column="57" selection-start-line="43" selection-start-column="57" selection-end-line="43" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-450" />
       </provider>
     </entry>
   </component>
@@ -1206,7 +1236,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
