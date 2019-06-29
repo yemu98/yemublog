@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import yemu.Common.ConsUtil;
 import yemu.domain.User;
 import yemu.service.UserService;
 
@@ -106,7 +107,7 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping(value = "/login",produces = "application/json;charset=UTF-8")
-    public Object login(HttpServletRequest request, HttpServletResponse response){//登录
+    public Object login(HttpServletRequest request, HttpServletResponse response,HttpSession session){//登录
         JSONObject json=new JSONObject(true);
         try{
             String account=request.getParameter("account");
@@ -133,10 +134,7 @@ public class UserController {
                         uid.setMaxAge(7*24*60*60);//一周过期
                         response.addCookie(uid);
                     }
-                    HttpSession session=request.getSession();
-                    session.setAttribute("user",user);
-
-
+                    session.setAttribute(ConsUtil.CUR_USER,user);
                 } else {
                     json.put("return", "failed");
                 }
