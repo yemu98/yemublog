@@ -1,9 +1,11 @@
 package yemu.domain;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.alibaba.fastjson.annotation.JSONType;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 
 import java.sql.Timestamp;
-
+@JSONType(serialzeFeatures = {SerializerFeature.WriteMapNullValue,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullListAsEmpty})
 public class Blog {
     @JSONField(ordinal = 1)
     private int id;

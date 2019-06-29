@@ -1,5 +1,6 @@
 package yemu.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.TransactionStatus;
@@ -9,12 +10,15 @@ import org.springframework.transaction.support.TransactionTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import yemu.Common.Response;
 import yemu.domain.Blog;
+import yemu.domain.User;
 import yemu.service.BlogService;
 import yemu.service.DiscussService;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.transaction.TransactionManager;
 import java.util.List;
 
@@ -27,18 +31,21 @@ public class BlogController {
     @Resource
     private DiscussService discussService;
 
-    @ResponseBody
+
     @RequestMapping(value = "/getById",produces = "application/json;charset=UTF-8")
-    public Object getById(HttpServletRequest request){
+    @ResponseBody
+    public Response<Blog> getById(HttpSession session, Integer id){
         Blog blog=null;
         try{
-            Integer id= Integer.valueOf(request.getParameter("id"));
             blog =blogService.getById(id);
-            return JSONObject.toJSONString(blog);
+            if (blog!=null){
+                return Response.createRespBySuccess(blog);
+            }
+            return Response.createRespByErrorMsg("没有此博客或已被删除！");
         }catch (Exception e){
             e.printStackTrace();
+            return Response.createRespByErrorMsg("参数错误！");
         }
-        return JSONObject.toJSONString("error");
     }
 
     @ResponseBody
