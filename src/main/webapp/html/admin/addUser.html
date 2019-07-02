@@ -48,7 +48,7 @@
                 document.getElementById("addbtn").disabled = true;
                 return false;
             }
-            var url = "http://blog.yemuc.xyz/user/getUser";
+            var url = "http://localhost:8080/yemublog/user/getUser";
             var data = type + "=" + temp;
             post(
                 url,
@@ -97,7 +97,7 @@
             var name = document.getElementById("addname").value;
             var password = document.getElementById("addpwd").value;
             var data = "account=" + account + "&name=" + name + "&password=" + password;
-            var url = "http://blog.yemuc.xyz/user/addUser";
+            var url = "http://localhost:8080/yemublog/user/addUser";
             post(
                 url,
                 data,
@@ -114,7 +114,7 @@
 
         function getById() {
             var id = document.getElementById("queryid").value;
-            var url = "http://blog.yemuc.xyz/user/getUser";
+            var url = "http://localhost:8080/yemublog/user/getUser";
             var data = "id=" + id;
             post(
                 url,
@@ -129,7 +129,7 @@
 
         function getByAccount() {
             var account = document.getElementById("queryaccount").value;
-            url = "http://blog.yemuc.xyz/user/getUser";
+            url = "http://localhost:8080/yemublog/user/getUser";
             var data = "account=" + account;
             post(
                 url,
@@ -144,7 +144,7 @@
 
         function getByName() {
             var name = document.getElementById("queryname").value;
-            url = "http://blog.yemuc.xyz/user/getUser";
+            url = "http://localhost:8080/yemublog/user/getUser";
             var data = "name=" + name;
             post(
                 url,

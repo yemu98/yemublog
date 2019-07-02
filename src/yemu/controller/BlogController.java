@@ -32,7 +32,7 @@ public class BlogController {
     private DiscussService discussService;
 
 
-    @RequestMapping(value = "/getById",produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/getById.do",produces = "application/json;charset=UTF-8")
     @ResponseBody
     public Response<Blog> getById(HttpSession session, Integer id){
         Blog blog=null;
@@ -49,7 +49,7 @@ public class BlogController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/deleteById",produces = "application/json;charset=UTF-8",params = "id")
+    @RequestMapping(value = "/deleteById.do",produces = "application/json;charset=UTF-8",params = "id")
     public Object deleteById(HttpServletRequest request){
         String flag="error";
         try {
@@ -66,7 +66,7 @@ public class BlogController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/getPage",produces = "application/json;charset=UTF-8",method = RequestMethod.POST)
+    @RequestMapping(value = "/getPage.do",produces = "application/json;charset=UTF-8",method = RequestMethod.POST)
     public Object getPage(HttpServletRequest request){
         List<Blog> blogs = null;
         try {
@@ -82,7 +82,7 @@ public class BlogController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/getPageCount",produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/getPageCount.do",produces = "application/json;charset=UTF-8")
     public Object getPageCount(HttpServletRequest request){
         Integer blognum; //一页几个
         try{
@@ -98,13 +98,13 @@ public class BlogController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/getBlogCount",produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/getBlogCount.do",produces = "application/json;charset=UTF-8")
     public Object getBlogCount(){
         return JSONObject.toJSONString(blogService.getBlogCount());
     }
 
     @ResponseBody
-    @RequestMapping(value = "/getRecent",produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/getRecent.do",produces = "application/json;charset=UTF-8")
     public Object getRecent(HttpServletRequest request){
         List<Blog> blogs = null;
         try {

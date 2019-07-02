@@ -10,13 +10,13 @@ http://www.zeroturnaround.com
 http://www.zeroturnaround.com ">
 
 	<classpath>
-		<dir name="/media/yemu/WorkSpace/Git/yemublog/target/classes">
+		<dir name="E://Git/yemublog/target/classes">
 		</dir>
 	</classpath>
 
 	<web>
 		<link target="/">
-			<dir name="/media/yemu/WorkSpace/Git/yemublog/src/main/webapp">
+			<dir name="E://Git/yemublog/src/main/webapp">
 			</dir>
 		</link>
 	</web>

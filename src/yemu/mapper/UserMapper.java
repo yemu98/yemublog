@@ -1,13 +1,15 @@
 package yemu.mapper;
 
+import org.apache.ibatis.annotations.Param;
 import yemu.domain.User;
 
 import java.util.List;
 
 public interface UserMapper {
+    List<User> getUser(User user);
     User getUserById(int id);
     User getUserByAccount(String account);
-    User getUserByName(String name);
+    List<User> getUserByName(@Param("name") String name);
     int insertUser(User user);
     void update(User user);
     void deleteUser(User user);

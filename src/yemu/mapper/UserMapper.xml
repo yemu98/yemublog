@@ -11,6 +11,16 @@
         <result column="create_time" property="create_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
+    <select id="getUser" resultType="yemu.domain.User"
+            parameterType="yemu.domain.User">
+        select * from user
+        <where>
+            <if test="id !=null">and id=#{id} </if>
+            <if test="name != null">and name like '%${name}%'</if>
+            <if test="account != null">and account=#{account}</if>
+        </where>
+    </select>
+
 <!--    以id为条件查询User表-->
     <select id="getUserById" resultMap="userResultMap"
             parameterType="int">
@@ -25,11 +35,11 @@
         from user
         where account=#{account}
     </select>
-    <select id="getUserByName" parameterType="String" resultMap="userResultMap">
+    <select id="getUserByName" parameterType="String" resultType="yemu.domain.User">
         select
         id,account,name,password,create_time
         from user
-        where name =#{name}
+        where name like concat('%',#{name},'%')
     </select>
     <insert id="insertUser" parameterType="yemu.domain.User" useGeneratedKeys="true" keyProperty="id">
         insert into user

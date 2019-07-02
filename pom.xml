@@ -186,12 +186,28 @@
       <version>1.9.2</version>
     </dependency>
 
+<!--    JSON web token-->
+    <!-- https://mvnrepository.com/artifact/com.auth0/java-jwt -->
+    <dependency>
+      <groupId>com.auth0</groupId>
+      <artifactId>java-jwt</artifactId>
+      <version>3.8.1</version>
+    </dependency>
+
 
 
   </dependencies>
 
   <build>
     <finalName>yemublog</finalName>
+<!--    源码目录-->
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+    </resources>
+
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>

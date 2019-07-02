@@ -2,12 +2,13 @@ package yemu.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.sun.org.apache.regexp.internal.RE;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import yemu.Common.ConsUtil;
+import yemu.Common.Response;
 import yemu.domain.User;
 import yemu.service.UserService;
 
@@ -53,100 +54,56 @@ public class UserController {
         return JSONObject.toJSONString("ok");
     }
     @ResponseBody
-    @RequestMapping(value = "/getUser",produces = "application/json;charset=UTF-8",params = "id")
-    public Object getUserById(HttpServletRequest request){//根据id获取用户信息
-        try{
-            String id=request.getParameter("id");
-            id=id.trim();//去除多余空格
-            if (id==null||id=="")
-                return null;
-            Integer userId=Integer.parseInt(id);
-            User user=this.userService.getUserById(userId);
-            return JSONObject.toJSONString(user);
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
-//        System.out.println(JSONObject.toJSONString(user));
-        return null;
-    }
-    @ResponseBody
-    @RequestMapping(value = "/getUser",produces = "application/json;charset=UTF-8",params = "account")
-    public Object getUserByAccount(HttpServletRequest request){//根据账号获取信息
-        try{
-            String account=request.getParameter("account");
-            account=account.trim();
-            if (account==null||account.equals("")){
-                return null;
-            }
-            User user=this.userService.getUserByAccount(account);
-            return JSONObject.toJSONString(user);
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
-        return null;
-    }
-    @ResponseBody
-    @RequestMapping(value = "/getUser",produces = "application/json;charset=UTF-8",params = "name")
-    public Object getUserByName(HttpServletRequest request){//根据姓名获取
-        try{
-            String name=request.getParameter("name");
-            name=name.trim();
-            if (name==null||name.equals("")){
-                return null;
-            }
-            User user=this.userService.getUserByName(name);
-            return JSONObject.toJSONString(user);
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
-        return null;
+    @RequestMapping(value = "/getUser.do",produces = "application/json;charset=UTF-8")
+    public Object getUserById(Integer id,String name,String account){//获取用户信息
+        return userService.getUser(id,name,account);
     }
 
     @ResponseBody
-    @RequestMapping(value = "/login",produces = "application/json;charset=UTF-8")
-    public Object login(HttpServletRequest request, HttpServletResponse response,HttpSession session){//登录
-        JSONObject json=new JSONObject(true);
+    @RequestMapping(value = "/getUserByName.do", produces = "application/json;charset=UTF-8")
+    public Response<List<User>> getUserByName(String name) {//根据姓名获取支持模糊查询
         try{
-            String account=request.getParameter("account");
-            String password=request.getParameter("password");
-            String remember=request.getParameter("remember");
-            if (remember.equals("false")||remember==null){//不记住登录状态
-                remember="";
-                Cookie uid=new Cookie("uid",null);//删除cookie
-                uid.setMaxAge(0);//生存时间为0
-                uid.setPath("/");//相同路径
-                response.addCookie(uid);
+            if (name==null||name.equals("")){
+                return Response.createRespByErrorMsg("参数出错！");
             }
-            User user=userService.getUserByAccount(account);
-            if (user!=null) {
-                if (user.getPassword().equals(password)) {
-                    json.put("return", "success");
-                    json.put("id", user.getId());
-                    json.put("account", user.getName());
-                    json.put("name", user.getName());
-                    json.put("create_time", user.getCreate_time());
-                    if (remember.equals("true")){//记住登录状态
-                        Cookie uid=new Cookie("uid",user.getId().toString());
-                        uid.setPath("/");
-                        uid.setMaxAge(7*24*60*60);//一周过期
-                        response.addCookie(uid);
-                    }
-                    session.setAttribute(ConsUtil.CUR_USER,user);
-                } else {
-                    json.put("return", "failed");
-                }
-            }
-            else{
-                json.put("return","none");
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-            json.put("return","error");
+            List<User> users=this.userService.getUserByName(name);
+            return Response.createRespBySuccess(users);
         }
-        return json.toJSONString();
+        catch (Exception e){
+            e.printStackTrace();
+            return Response.createRespByErrorMsg("服务器内部错误！");
+        }
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/login.do",produces = "application/json;charset=UTF-8")
+    public Response<User> login(String account, String password, Boolean remember, HttpSession session,HttpServletResponse resq){//登录
+        if (account==null||account.equals("")||password==null||password.equals("")){
+            return Response.createRespByErrorMsg("参数错误！");
+        }
+        if (remember==null){
+            remember=false;
+        }
+        Response response=userService.login(account,password);
+        session.setAttribute(ConsUtil.CUR_USER,response.getData());//用session保存登录信息
+        if (response.getStatus()==0){//保存登录状态
+            if (remember==true){
+                User user= (User) response.getData();
+
+                Cookie cookie=new Cookie("JSESSIONID", session.getId());//持久化session
+                cookie.setPath("/");
+                cookie.setMaxAge(7*24*60*60);//一周过期
+                resq.addCookie(cookie);
+            }else {
+                //清空cookie
+                Cookie cookie=new Cookie("user",null);
+                cookie.setPath("/");
+                cookie.setMaxAge(0);//设置过期
+                resq.addCookie(cookie);
+
+            }
+        }
+        return response;
     }
 
     @ResponseBody
@@ -210,5 +167,15 @@ public class UserController {
             e.printStackTrace();
         }
         return JSONObject.toJSONString(user);
+    }
+
+    @RequestMapping(value = "/getCurUser.do",produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public Response<User> getCurUser(HttpServletResponse response,HttpSession session){
+        User user= (User) session.getAttribute(ConsUtil.CUR_USER);
+        if (user==null){
+            return Response.createRespByErrorMsg("请先登录!");
+        }
+        return Response.createRespBySuccess(user);
     }
 }

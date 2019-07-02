@@ -4,6 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import yemu.Common.Response;
 import yemu.domain.User;
 import yemu.mapper.UserMapper;
 
@@ -16,6 +17,27 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
     @Resource
     private SqlSessionFactory sqlSessionFactory;
+
+    @Override
+    public Response<User> getUser(Integer id, String name, String account) {
+        User user=new User();
+        if (id!=null&&id!=0){
+            user.setId(id);
+        }
+        if (name!=null&&!name.equals("")){
+            user.setName(name);
+        }
+        if (account!=null&&!account.equals("")){
+            user.setAccount(account);
+        }
+        List<User> users=userMapper.getUser(user);
+        if (users.size()>0){
+            return Response.createRespBySuccess(users.get(0));
+        }else {
+            return Response.createRespByErrorMsg("无此用户!");
+        }
+    }
+
     @Override
     public User getUserById(int id) {
 //        return this.userDao.getUserById(id);
@@ -28,9 +50,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserByName(String name) {
-        User user=userMapper.getUserByName(name);
-        return user;
+    public List<User> getUserByName(String name) {
+        List<User> users=userMapper.getUserByName(name);
+        return users;
     }
 
     @Override
@@ -63,6 +85,23 @@ public class UserServiceImpl implements UserService {
     @Override
     public void delete(int id) {
         userMapper.delete(id);
+    }
+
+    @Override
+    public Response<User> login(String account, String password) {
+        User user=userMapper.getUserByAccount(account);
+        if (user==null){
+            return Response.createRespByErrorMsg("用户不存在！");
+        }
+        else {
+            if (user.getPassword().equals(password)){
+                user.setPassword("");
+                return Response.createRespBySuccess(user);
+            }
+            else {
+                return Response.createRespByErrorMsg("密码错误!");
+            }
+        }
     }
 
 }

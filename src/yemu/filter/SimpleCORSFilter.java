@@ -20,7 +20,7 @@ public class SimpleCORSFilter implements Filter {
         if (isCross) {
             HttpServletRequest httpServletRequest = (HttpServletRequest) request;
             HttpServletResponse httpServletResponse = (HttpServletResponse) response;
-            System.out.println("拦截到请求: " + httpServletRequest.getServletPath());
+            System.out.println(httpServletRequest.getServletPath());
             httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
             httpServletResponse.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
             httpServletResponse.setHeader("Access-Control-Max-Age", "0");

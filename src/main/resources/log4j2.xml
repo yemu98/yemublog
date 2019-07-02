@@ -34,5 +34,8 @@
             <!-- 这里是输入到控制台-->
             <AppenderRef ref="Console" />
         </Root>
+
+
+
     </Loggers>
 </Configuration>
