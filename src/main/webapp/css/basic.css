@@ -26,7 +26,7 @@ a:after {
 
 a:hover:after,
 a.active:after {
-    left: 0%;
+    left: 0;
     width: 100%;
 
 }

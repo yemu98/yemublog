@@ -14,8 +14,8 @@
 <body>
     <h3>添加用户</h3>
     <form>
-        <p>账号：<input type="text" required="required" id="addaccount" oninput="check('account')"><span id="rightaccount"
-                style="color: red" ></span> </p>
+        <p>账号：<input id="addaccount" oninput="check('account')" required="required" type="text"/><span id="rightaccount"
+                                                                                                       style="color: red" ></span> </p>
         <p>名字：<input type="text" required="required" id="addname"
                     oninput="check('name')"><span id="rightname" style="color: red"></span> </p>
         <p>密码：<input type="password" required="required" id="addpwd" ></p> 
@@ -76,12 +76,12 @@
             var pwd2=document.getElementById("addpwd2");
             if(pwd.value==""){
                 addbtn.disabled=true;
-            document.getElementById("rightpwd").innerHTML="请输入密码"
+            document.getElementById("rightpwd").innerHTML="请输入密码";
             return false;
             }
             if (pwd.value!=pwd2.value){
             addbtn.disabled=true;
-            document.getElementById("rightpwd").innerHTML="两次输入不一致"
+            document.getElementById("rightpwd").innerHTML="两次输入不一致";
             return false;
             }
             document.getElementById("rightpwd").innerHTML="正确"
@@ -90,7 +90,7 @@
             if (check("account")!=false&&check("name")!=false&&checkpwd()!=false){
                 addUser();
             }
-        }
+        };
 
         function addUser() {
             var account = document.getElementById("addaccount").value;

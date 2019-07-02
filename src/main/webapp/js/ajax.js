@@ -44,7 +44,7 @@ function upload(url,formData,success,failed,progress){//用formData对象，上�
     xhr.open("POST", url,true);
     xhr.upload.onprogress=function(evt){
         progress(evt);
-    }
+    };
     xhr.send(formData);
     
     xhr.onreadystatechange = function () {

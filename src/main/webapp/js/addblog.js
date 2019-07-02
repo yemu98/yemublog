@@ -29,7 +29,7 @@ function addsection() {//添加新的段落textarea
     newnode.oninput = function () {
         autosize(this);
         replace(this);
-    }
+    };
     newnode.placeholder = "段落";
     var parentnode = document.getElementById("sections");
     parentnode.insertBefore(newnode, parentnode.lastElementChild.nextSibling);
@@ -122,7 +122,7 @@ function postblog() {//发布
     blog["title"]=headline;
     blog["content"]=content;
     blog["author"]=getCookie("name");
-    var url="http://localhost:8080/yemublog/post/postBlog"
+    var url="http://localhost:8080/yemublog/post/postBlog";
     post(url,
         "json="+JSON.stringify(blog),
         function success(text){

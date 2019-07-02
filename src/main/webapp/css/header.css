@@ -106,7 +106,7 @@ nav a:hover{
 
 @keyframes fromup{
     from {top:-10px}
-    to {top:0px}
+    to {top:0}
 }
 @keyframes fromleft{
     from {left: -10px;}

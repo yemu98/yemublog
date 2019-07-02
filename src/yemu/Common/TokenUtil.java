@@ -5,10 +5,6 @@ public class TokenUtil {
         return "token"+id+name;
     }
     public static boolean verify(String token){
-        if (token.substring(0,5).equals("token")){
-            return true;
-        }else {
-            return false;
-        }
+        return token.substring(0, 5).equals("token");
     }
 }
