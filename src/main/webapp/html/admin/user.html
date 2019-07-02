@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="../../css/basic.css"> -->
+    <link rel="stylesheet" href="../../css/adminbasic.css">
+    <script src="../../js/logout.js"></script>
+    <script src="../../js/admin.js"></script>
+    <script src="../../js/ajax.js"></script>
+    <title>用户</title>
+</head>
+
+<body>
+    <nav class="leftnav">
+        <ul class="options">
+            <li class="option"><a href="../index.html"><img class="navicon returnindex"
+                        src="../../res/首页.png"><span>首页</span></a>
+            </li>
+            <li class="option"><a href="index.html"><img class="navicon" src="../../res/总览.png"><span>总览</span></a></li>
+            <li class="option"><a href="addBlog.html"><img class="navicon" src="../../res/添加.png"><span>写博客</span></a>
+            </li>
+            <!-- <li class="option"><a href="#"><img class="navicon" src="../../res/文章.png"><span>文章</span></a></li> -->
+            <li class="option"><a href="discuss.html"><img class="navicon" src="../../res/评论.png"><span>评论</span></a>
+            </li>
+            <!-- <li class="option"><a href="#"><img class="navicon" src="../../res/回收站.png"><span>回收站</span></a></li> -->
+            <li class="active option"><a href="user.html"><img class="navicon"
+                        src="../../res/用户.png"><span>用户</span></a>
+            </li>
+            <li class="option"><a href="" onclick="logout()"><img class="navicon"
+                        src="../../res/退出.png"><span>登出</span></a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>用户总数：</h1>
+        <h2 id="usercount"></h2>
+        <table border="1" id="users">
+            <tr>
+                <td>id</td>
+                <td>账号</td>
+                <td>姓名</td>
+                <td>添加时间</td>
+                <td>操作</td>
+            </tr>
+        </table>
+        <div>
+            <h1>添加用户</h1>
+            <p>账号：<input type="text" id="addaccount" oninput="check('account')"><span id="rightaccount"
+                    style="color: red"></span>
+                <input type="hidden" id="accountflag" value="false">
+            </p>
+            <p>名字：<input type="text" id="addname" oninput="check('name')"><span id="rightname"
+                    style="color: red"></span>
+                <input type="hidden" id="nameflag" value="false">
+            </p>
+            <p>密码：<input type="password" id="addpwd"></p>
+            <p>确认密码：<input type="password" id="addpwd2" oninput="checkpwd()">
+                <span id="rightpwd" style="color: red"> </span>
+                <input type="hidden" id="pwdflag" value="false">
+            </p>
+            <p><input type="submit" value="添加" onclick="checkinput()" id="addbtn">
+                <input type="reset" value="重置">
+            </p>
+        </div>
+        <div>
+            <h1>查找用户</h1>
+            <h3>用户信息</h3>
+            <table border="1">
+                <tr>
+                    <td>id</td>
+                    <td>账号</td>
+                    <td>用户名</td>
+                    <td>添加时间</td>
+                    <td>操作</td>
+                </tr>
+                <tr>
+                    <td id="userid"></td>
+                    <td><input type="text" id="useraccount"></td>
+                    <td><input type="text" id="username"></td>
+                    <td id="user_createtime"></td>
+                    <td><input type="button" onclick="updateUser()" value="修改"></td>
+                </tr>
+
+            </table>
+            <p id="userinfo"></p>
+            <p>根据账号查找</p>
+            <p>账号：<input type="text" id="queryaccount"><input type="button" value="查找" onclick="getByAccount()"></p>
+            <p>根据名字查找</p>
+            <p>名字：<input type="text" id="queryname"><input type="button" value="查找" onclick="getByName()"></p>
+        </div>
+    </main>
+    <script src="../../js/user.js"></script>
+
+    <script>
+
+    </script>
+</body>
+
+</html>

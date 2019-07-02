@@ -1,0 +1,139 @@
+.pageheadline {
+    margin-top: 80px;
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+main {
+    /* border: 1px solid black; */
+    /* margin-left: 10%; */
+    /* margin-top: 0; */
+}
+
+.blog {
+    height: 100%;
+    width: 50%;
+    display: block;
+    /* border: 1px solid red; */
+    margin-left: 10%;
+    overflow: hidden;
+}
+
+.blogheadline {
+    font-weight: 500;
+    font-size: 200%;
+    text-align: center;
+}
+
+.blogcontent {
+    text-indent: 2em;
+    word-break: break-all;
+    overflow: hidden;
+    margin-right: 5%;
+    margin-left: 5%;
+    /* border: 1px solid red; */
+}
+
+.blogcontent img {
+    width: 50%;
+    height: 50%;
+}
+
+.blogimg {
+    text-align: center;
+}
+
+.blogimginfo {
+    font-weight: lighter;
+    text-decoration: underline;
+}
+
+.discuss {
+    display: block;
+    width: 95%;
+
+    /* border: 1px solid red; */
+}
+
+.discuss form {
+    display: block;
+    width: 100%;
+    /* border: 1px solid black; */
+    overflow: hidden;
+}
+
+.discussinput {
+    display: inline-block;
+    /* float: left; */
+    width: 99%;
+    padding-top: 20px;
+    margin-top: 10px;
+    max-width: 99%;
+
+}
+
+@media screen and (max-width:1200px) {
+    .blog {
+        margin: 0 auto;
+        width: 95%;
+    }
+}
+
+.discussbtn {
+    background-color: rgb(220, 40, 40);
+    width: 100px;
+    height: 50px;
+    display: block;
+    color: white;
+    line-height: 50px;
+    text-align: center;
+    margin: 1em 0;
+    /* border-top-left-radius: 50%; */
+    border-radius: 100px;
+    /* border-bottom-right-radius: 50%; */
+    clear: both;
+    float: right;
+    margin-right: 5%;
+}
+
+.discussitems {
+    width: 95%;
+    display: block;
+    border: 1px solid #dad7d7;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 50px;
+
+}
+
+.discussitem {
+    height: 100%;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #d8d4d4;
+    margin-top: 5px;
+}
+
+.discusswriter {
+    background-color: rgb(220, 40, 40);
+    display: block;
+    color: white;
+    padding: .2em;
+    text-align: center;
+    border-radius: 10px;
+    clear: both;
+    width: 10%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.discusscontent {
+    font-weight: 300;
+    font-family: Roboto;
+    font-size: 100%;
+    text-indent: 2em;
+    /* border: 1px solid green; */
+}
