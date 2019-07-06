@@ -14,11 +14,11 @@
        http://www.springframework.org/schema/tx/spring-tx.xsd"
 >
     <!-- 自动扫描该包-->
-    <context:component-scan base-package="yemu.service" />
+    <context:component-scan base-package="main.yemu.service" />
 
 <!--    引入配置文件-->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location" value="classpath:jdbc.properties"></property>
+        <property name="location" value="classpath:jdbc.properties"/>
     </bean>
 <!--    dbcp数据源配置-->
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
@@ -41,11 +41,11 @@
         <property name="defaultAutoCommit" value="${defaultAutoCommit}"/>
     </bean>
 
-<!--    spring 和 MyBatis的完美整合，不需要mybatis的配置映射文件-->
+<!--    spring 和 MyBatis的整合，不需要mybatis的配置映射文件-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
 <!--        自动扫描mapping.xml配置文件-->
-        <property name="mapperLocations" value="classpath:yemu/mapper/*.xml"></property>
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
 <!--        添加另外的mybatis配置文件-->
 
     </bean>
@@ -55,7 +55,7 @@ spring会自动查找其下的类-->
 <!--    用实体dao需要注释掉，否则会报警告：No MyBatis mapper was found in-->
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="yemu.mapper"/>
+        <property name="basePackage" value="main.yemu.mapper"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
 
     </bean>
@@ -91,7 +91,7 @@ spring会自动查找其下的类-->
     </tx:advice>
 <!--    AOP事务处理-->
     <aop:config>
-        <aop:pointcut id="allServiceMethods" expression="execution(* yemu.service..*(..))"/>
+        <aop:pointcut id="allServiceMethods" expression="execution(* main.yemu.service..*(..))"/>
         <aop:advisor pointcut-ref="allServiceMethods" advice-ref="txAdvice"/>
     </aop:config>
 

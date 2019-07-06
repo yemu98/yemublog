@@ -22,37 +22,18 @@ function login() {
     var account = document.getElementById("account").value;
     var password = document.getElementById("password").value;
     var remember = document.getElementById("remember").checked;
-    var url = "http://localhost:8080/yemublog/user/login";
+    var url = "http://localhost:8080/yemublog/user/login.do";
     var data = "account=" + account + "&password=" + password + "&remember=" + remember;
     post(url,
         data,
         function success(text) {
-            var data = JSON.parse(text);
-            switch (data.return){
-                case "success":
-                alert("登录成功");
-                loginsuccess(data,remember);
-                break;
-                case "failed":
-                alert("密码错误");
-                break;
-                case "none":
-                alert("无此用户");
-                break;
-                case "error":
-                alert("登录失败");
-                break;
-                default:
-                alert("发生错误");
-            }
-
-            
-            // alert(text);
+            var user = JSON.parse(text);
+            $(window).attr("location","index.html");
+            alert(text);
         },
         function failed(text) {
             alert(text);
         });
-    // alert(password);
     return false;
 }
 

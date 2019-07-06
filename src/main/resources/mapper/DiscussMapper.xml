@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="main.yemu.mapper.DiscussMapper">
+    <resultMap id="discuss" type="main.yemu.domain.Discuss">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="blogid" property="blogid" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="content" property="content" jdbcType="VARCHAR"/>
+        <result column="email" property="email" jdbcType="VARCHAR"/>
+        <result column="create_time" property="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <select id="getById" resultMap="discuss" parameterType="int">
+        select * from discuss where id=#{id};
+    </select>
+    <select id="getByBlogId" resultType="main.yemu.domain.Discuss" parameterType="int">
+        select * from discuss where blogid=#{blogid} order by id;
+    </select>
+    <insert id="addDiscuss" parameterType="main.yemu.domain.Discuss" useGeneratedKeys="true" keyProperty="id">
+        insert into
+        discuss
+        (blogid,content,name,email)
+        values
+        (#{blogid},#{content},#{name},#{email})
+    </insert>
+    <select id="getDiscussCount" resultType="int">
+        select  count(*) from discuss;
+    </select>
+    <select id="getAll" resultType="main.yemu.domain.Discuss">
+        select * from discuss;
+    </select>
+    <delete id="deleteByBlog" parameterType="int">
+        delete from discuss
+        where blogid=#{blogid}
+    </delete>
+    <delete id="deleteById" parameterType="int">
+        delete from discuss
+        where id=#{id}
+    </delete>
+</mapper>
